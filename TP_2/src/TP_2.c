@@ -45,6 +45,7 @@ int main(void) {
 	int reportCode;
 	int reportType;
 	int reportStatus;
+	int reportForced;
 
 		initPassengers(list, LIMIT);
 		forceDataTypePassenger(listType);
@@ -213,12 +214,21 @@ int main(void) {
 					break;
 
 					case 5:
+						reportForced = forcedLoad(list, LIMIT, &counterId);
+
+							if(reportForced == 0)
+							{
+								flag = 1;
+							}
+					break;
+
+					case 6:
 						printf("Cerrando Programa\n");
 						system("PAUSE");
 					break;
 				}
 
-		}while(option != 5);
+		}while(option != 6);
 
 	return EXIT_SUCCESS;
 }

@@ -65,4 +65,6 @@ int getHowManyExceedAverage(Passenger* list, int len, float average, int* counte
 int printTypefloat(float num, char* message);
 int printTypeInt(int num, char* message);
 
+int forcedLoad(Passenger* list, int len, int* counterId);
+
 #endif /* ARRAYPASSENGER_H_ */

@@ -15,7 +15,8 @@ void printMenu()
 			"2.Modificar\n"
 			"3.Baja\n"
 			"4.Informar\n"
-			"5.Salir\n"
+			"5.Carga Forzada\n"
+			"6.Salir\n"
 			"-Opcion: ");
 }
 

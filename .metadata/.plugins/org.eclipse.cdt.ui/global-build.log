@@ -1,0 +1,1306 @@
+00:38:53 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+00:39:36 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+Info: Nothing to build for TP_2
+Info: Nothing to build for TP_2
+00:40:29 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file TP_2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+00:40:31 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+00:55:28 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+src\TP_2.o: In function `main':
+D:\Facultad\Programación\1er Cuatrimestre\Programacion y Laboratorio I\TP_Laboratoro_1\TP_2\Debug/../src/TP_2.c:102: undefined reference to `validatePassenger'
+collect2.exe: error: ld returned 1 exit status
+00:56:05 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:53:27: warning: 'position' may be used uninitialized in this function [-Wmaybe-uninitialized]
+       reportFindPassenger = findPassengerById(list, LIMIT, position);
+       ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+00:56:27 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:64:13: warning: 'position' may be used uninitialized in this function [-Wmaybe-uninitialized]
+             askForName(list, position);
+             ^~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+00:59:07 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:23:6: warning: unused variable 'position' [-Wunused-variable]
+  int position;
+      ^~~~~~~~
+..\src\TP_2.c:20:6: warning: unused variable 'optionSecondMenu' [-Wunused-variable]
+  int optionSecondMenu;
+      ^~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c: In function 'findPassengerById':
+..\src\Passenger.c:385:11: warning: implicit declaration of function 'printMenuModifyPassenger' [-Wimplicit-function-declaration]
+           printMenuModifyPassenger();
+           ^~~~~~~~~~~~~~~~~~~~~~~~
+..\src\Passenger.c:386:11: warning: implicit declaration of function 'chooseOption' [-Wimplicit-function-declaration]
+           chooseOption(&optionSecondMenu);
+           ^~~~~~~~~~~~
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+01:00:01 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+14:02:18 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+In file included from ..\src\TP_2.c:4:0:
+..\src\Menu.h:11:15: error: unknown type name 'Passenger'
+ int startMenu(Passenger* list, int len, int optionMainMenu);
+               ^~~~~~~~~
+..\src\Menu.h:15:17: error: unknown type name 'Passenger'
+ int startOption(Passenger* list, int len, int opt);
+                 ^~~~~~~~~
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:24:4: warning: implicit declaration of function 'startMenu' [-Wimplicit-function-declaration]
+    startMenu(list, LIMIT, optionMainMenu);
+    ^~~~~~~~~
+14:02:55 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+In file included from ..\src\TP_2.c:4:0:
+..\src\Menu.h:11:15: error: unknown type name 'Passenger'
+ int startMenu(Passenger* list, int len, int optionMainMenu);
+               ^~~~~~~~~
+..\src\Menu.h:15:17: error: unknown type name 'Passenger'
+ int startOption(Passenger* list, int len, int opt);
+                 ^~~~~~~~~
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:24:4: warning: implicit declaration of function 'startMenu' [-Wimplicit-function-declaration]
+    startMenu(list, LIMIT, optionMainMenu);
+    ^~~~~~~~~
+14:04:36 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+In file included from ..\src\validation.c:4:0:
+..\src\Menu.h:11:15: error: unknown type name 'Passenger'
+ int startMenu(Passenger* list, int len, int optionMainMenu);
+               ^~~~~~~~~
+..\src\Menu.h:15:17: error: unknown type name 'Passenger'
+ int startOption(Passenger* list, int len, int opt);
+                 ^~~~~~~~~
+14:04:55 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:24:4: warning: 'optionMainMenu' is used uninitialized in this function [-Wuninitialized]
+    startMenu(list, LIMIT, optionMainMenu);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+In file included from ..\src\Menu.c:10:0:
+..\src\Menu.h:11:15: error: unknown type name 'Passenger'
+ int startMenu(Passenger* list, int len, int optionMainMenu);
+               ^~~~~~~~~
+..\src\Menu.h:15:17: error: unknown type name 'Passenger'
+ int startOption(Passenger* list, int len, int opt);
+                 ^~~~~~~~~
+..\src\Menu.c: In function 'startMenu':
+..\src\Menu.c:26:5: warning: implicit declaration of function 'startOption' [-Wimplicit-function-declaration]
+     startOption(list, len, optionMainMenu);
+     ^~~~~~~~~~~
+14:05:09 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+In file included from ..\src\validation.c:4:0:
+..\src\Menu.h:11:15: error: unknown type name 'Passenger'
+ int startMenu(Passenger* list, int len, int optionMainMenu);
+               ^~~~~~~~~
+..\src\Menu.h:15:17: error: unknown type name 'Passenger'
+ int startOption(Passenger* list, int len, int opt);
+                 ^~~~~~~~~
+14:14:30 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+14:22:26 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+14:26:47 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:14:2: warning: 'list' is used uninitialized in this function [-Wuninitialized]
+  initPassengers(list, LIMIT);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+src\validation.o: In function `initPassengers':
+D:\Facultad\Programación\1er Cuatrimestre\Programacion y Laboratorio I\TP_Laboratoro_1\TP_2\Debug/../src/validation.c:8: multiple definition of `initPassengers'
+src\Passenger.o:D:\Facultad\Programación\1er Cuatrimestre\Programacion y Laboratorio I\TP_Laboratoro_1\TP_2\Debug/../src/Passenger.c:8: first defined here
+collect2.exe: error: ld returned 1 exit status
+14:27:55 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+src\validation.o: In function `initPassengers':
+D:\Facultad\Programación\1er Cuatrimestre\Programacion y Laboratorio I\TP_Laboratoro_1\TP_2\Debug/../src/validation.c:8: multiple definition of `initPassengers'
+src\Passenger.o:D:\Facultad\Programación\1er Cuatrimestre\Programacion y Laboratorio I\TP_Laboratoro_1\TP_2\Debug/../src/Passenger.c:8: first defined here
+collect2.exe: error: ld returned 1 exit status
+14:28:19 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+src\validation.o: In function `initPassengers':
+D:\Facultad\Programación\1er Cuatrimestre\Programacion y Laboratorio I\TP_Laboratoro_1\TP_2\Debug/../src/validation.c:8: multiple definition of `initPassengers'
+src\Passenger.o:D:\Facultad\Programación\1er Cuatrimestre\Programacion y Laboratorio I\TP_Laboratoro_1\TP_2\Debug/../src/Passenger.c:8: first defined here
+collect2.exe: error: ld returned 1 exit status
+14:28:43 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" 
+Info: Nothing to build for TP_2
+14:28:56 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:14:30: error: unknown type name 'd'
+  initPassengers(list, LIMIT);d
+                              ^
+14:29:00 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:14:2: warning: 'list' is used uninitialized in this function [-Wuninitialized]
+  initPassengers(list, LIMIT);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" 
+14:29:25 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:14:17: warning: passing argument 1 of 'initPassengers' from incompatible pointer type [-Wincompatible-pointer-types]
+  initPassengers(list, LIMIT);
+                 ^~~~
+In file included from ..\src\TP_2.c:4:0:
+..\src\Passenger.h:22:5: note: expected 'Passenger * {aka struct <anonymous> *}' but argument is of type 'Passenger ** {aka struct <anonymous> **}'
+ int initPassengers(Passenger* list, int len);
+     ^~~~~~~~~~~~~~
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" 
+14:29:42 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" 
+Info: Nothing to build for TP_2
+14:32:46 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+In file included from ..\src\Menu.c:4:0:
+..\src\Menu.h:6:16: error: unknown type name 'Passenger'
+ void printMenu(Passenger* list, int len);
+                ^~~~~~~~~
+..\src\Menu.h:8:17: error: unknown type name 'Passenger'
+ int startOption(Passenger* list, int len, int opt);
+                 ^~~~~~~~~
+..\src\Menu.c: In function 'startMenu':
+..\src\Menu.c:18:6: warning: implicit declaration of function 'printMenu' [-Wimplicit-function-declaration]
+      printMenu();
+      ^~~~~~~~~
+..\src\Menu.c:20:6: warning: implicit declaration of function 'startOption' [-Wimplicit-function-declaration]
+      startOption(optionMenuMain);
+      ^~~~~~~~~~~
+..\src\Menu.c: At top level:
+..\src\Menu.c:74:6: warning: conflicting types for 'printMenu'
+ void printMenu()
+      ^~~~~~~~~
+..\src\Menu.c:18:6: note: previous implicit declaration of 'printMenu' was here
+      printMenu();
+      ^~~~~~~~~
+14:35:41 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+In file included from ..\src\Menu.c:4:0:
+..\src\Menu.h:6:16: error: unknown type name 'Passenger'
+ void printMenu(Passenger* list, int len);
+                ^~~~~~~~~
+..\src\Menu.h:8:17: error: unknown type name 'Passenger'
+ int startOption(Passenger* list, int len, int opt);
+                 ^~~~~~~~~
+..\src\Menu.c: In function 'startMenu':
+..\src\Menu.c:18:6: warning: implicit declaration of function 'printMenu' [-Wimplicit-function-declaration]
+      printMenu();
+      ^~~~~~~~~
+..\src\Menu.c:20:6: warning: implicit declaration of function 'startOption' [-Wimplicit-function-declaration]
+      startOption(optionMenuMain);
+      ^~~~~~~~~~~
+..\src\Menu.c: At top level:
+..\src\Menu.c:74:6: warning: conflicting types for 'printMenu'
+ void printMenu()
+      ^~~~~~~~~
+..\src\Menu.c:18:6: note: previous implicit declaration of 'printMenu' was here
+      printMenu();
+      ^~~~~~~~~
+14:36:11 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+..\src\Menu.c: In function 'startMenu':
+..\src\Menu.c:18:6: error: too few arguments to function 'printMenu'
+      printMenu();
+      ^~~~~~~~~
+In file included from ..\src\Menu.c:5:0:
+..\src\Menu.h:6:6: note: declared here
+ void printMenu(Passenger* list, int len);
+      ^~~~~~~~~
+..\src\Menu.c:20:18: warning: passing argument 1 of 'startOption' makes pointer from integer without a cast [-Wint-conversion]
+      startOption(optionMenuMain);
+                  ^~~~~~~~~~~~~~
+In file included from ..\src\Menu.c:5:0:
+..\src\Menu.h:8:5: note: expected 'Passenger * {aka struct <anonymous> *}' but argument is of type 'int'
+ int startOption(Passenger* list, int len, int opt);
+     ^~~~~~~~~~~
+..\src\Menu.c:20:6: error: too few arguments to function 'startOption'
+      startOption(optionMenuMain);
+      ^~~~~~~~~~~
+In file included from ..\src\Menu.c:5:0:
+..\src\Menu.h:8:5: note: declared here
+ int startOption(Passenger* list, int len, int opt);
+     ^~~~~~~~~~~
+..\src\Menu.c: In function 'printMenu':
+..\src\Menu.c:75:1: error: number of arguments doesn't match prototype
+ {
+ ^
+In file included from ..\src\Menu.c:5:0:
+..\src\Menu.h:6:6: error: prototype declaration
+ void printMenu(Passenger* list, int len);
+      ^~~~~~~~~
+14:38:22 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+..\src\Menu.c: In function 'startMenu':
+..\src\Menu.c:20:18: warning: passing argument 1 of 'startOption' makes pointer from integer without a cast [-Wint-conversion]
+      startOption(optionMenuMain);
+                  ^~~~~~~~~~~~~~
+In file included from ..\src\Menu.c:5:0:
+..\src\Menu.h:8:5: note: expected 'Passenger * {aka struct <anonymous> *}' but argument is of type 'int'
+ int startOption(Passenger* list, int len, int opt);
+     ^~~~~~~~~~~
+..\src\Menu.c:20:6: error: too few arguments to function 'startOption'
+      startOption(optionMenuMain);
+      ^~~~~~~~~~~
+In file included from ..\src\Menu.c:5:0:
+..\src\Menu.h:8:5: note: declared here
+ int startOption(Passenger* list, int len, int opt);
+     ^~~~~~~~~~~
+14:38:48 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:16:3: error: too few arguments to function 'startMenu'
+   startMenu();
+   ^~~~~~~~~
+In file included from ..\src\TP_2.c:5:0:
+..\src\Menu.h:4:5: note: declared here
+ int startMenu(Passenger* list, int len);
+     ^~~~~~~~~
+14:39:03 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" 
+Info: Nothing to build for TP_2
+Info: Nothing to build for TP_2
+21:45:41 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" 
+22:00:14 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" 
+22:38:40 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:40:18: warning: passing argument 1 of 'searchFree' makes pointer from integer without a cast [-Wint-conversion]
+       searchFree(freePlace, LIMIT);
+                  ^~~~~~~~~
+In file included from ..\src\TP_2.c:4:0:
+..\src\Passenger.h:24:5: note: expected 'Passenger * {aka struct <anonymous> *}' but argument is of type 'int'
+ int searchFree(Passenger* list, int len, int* free);
+     ^~~~~~~~~~
+..\src\TP_2.c:40:7: error: too few arguments to function 'searchFree'
+       searchFree(freePlace, LIMIT);
+       ^~~~~~~~~~
+In file included from ..\src\TP_2.c:4:0:
+..\src\Passenger.h:24:5: note: declared here
+ int searchFree(Passenger* list, int len, int* free);
+     ^~~~~~~~~~
+..\src\TP_2.c:24:7: warning: unused variable 'flyCode' [-Wunused-variable]
+  char flyCode[CODE_LIMIT];
+       ^~~~~~~
+..\src\TP_2.c:23:6: warning: unused variable 'typePassenger' [-Wunused-variable]
+  int typePassenger;
+      ^~~~~~~~~~~~~
+..\src\TP_2.c:22:8: warning: unused variable 'price' [-Wunused-variable]
+  float price;
+        ^~~~~
+..\src\TP_2.c:21:7: warning: unused variable 'lastName' [-Wunused-variable]
+  char lastName[WORD_LIMIT];
+       ^~~~~~~~
+..\src\TP_2.c:20:7: warning: unused variable 'name' [-Wunused-variable]
+  char name[WORD_LIMIT];
+       ^~~~
+..\src\TP_2.c:19:6: warning: unused variable 'id' [-Wunused-variable]
+  int id;
+      ^~
+22:39:45 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:40:18: warning: passing argument 1 of 'searchFree' makes pointer from integer without a cast [-Wint-conversion]
+       searchFree(freePlace, LIMIT);
+                  ^~~~~~~~~
+In file included from ..\src\TP_2.c:4:0:
+..\src\Passenger.h:24:5: note: expected 'Passenger * {aka struct <anonymous> *}' but argument is of type 'int'
+ int searchFree(Passenger* list, int len, int* free);
+     ^~~~~~~~~~
+..\src\TP_2.c:40:7: error: too few arguments to function 'searchFree'
+       searchFree(freePlace, LIMIT);
+       ^~~~~~~~~~
+In file included from ..\src\TP_2.c:4:0:
+..\src\Passenger.h:24:5: note: declared here
+ int searchFree(Passenger* list, int len, int* free);
+     ^~~~~~~~~~
+..\src\TP_2.c:24:7: warning: unused variable 'flyCode' [-Wunused-variable]
+  char flyCode[CODE_LIMIT];
+       ^~~~~~~
+..\src\TP_2.c:23:6: warning: unused variable 'typePassenger' [-Wunused-variable]
+  int typePassenger;
+      ^~~~~~~~~~~~~
+..\src\TP_2.c:22:8: warning: unused variable 'price' [-Wunused-variable]
+  float price;
+        ^~~~~
+..\src\TP_2.c:21:7: warning: unused variable 'lastName' [-Wunused-variable]
+  char lastName[WORD_LIMIT];
+       ^~~~~~~~
+..\src\TP_2.c:20:7: warning: unused variable 'name' [-Wunused-variable]
+  char name[WORD_LIMIT];
+       ^~~~
+..\src\TP_2.c:19:6: warning: unused variable 'id' [-Wunused-variable]
+  int id;
+      ^~
+22:40:12 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:40:31: warning: passing argument 3 of 'searchFree' makes pointer from integer without a cast [-Wint-conversion]
+       searchFree(list, LIMIT, freePlace);
+                               ^~~~~~~~~
+In file included from ..\src\TP_2.c:4:0:
+..\src\Passenger.h:24:5: note: expected 'int *' but argument is of type 'int'
+ int searchFree(Passenger* list, int len, int* free);
+     ^~~~~~~~~~
+..\src\TP_2.c:24:7: warning: unused variable 'flyCode' [-Wunused-variable]
+  char flyCode[CODE_LIMIT];
+       ^~~~~~~
+..\src\TP_2.c:23:6: warning: unused variable 'typePassenger' [-Wunused-variable]
+  int typePassenger;
+      ^~~~~~~~~~~~~
+..\src\TP_2.c:22:8: warning: unused variable 'price' [-Wunused-variable]
+  float price;
+        ^~~~~
+..\src\TP_2.c:21:7: warning: unused variable 'lastName' [-Wunused-variable]
+  char lastName[WORD_LIMIT];
+       ^~~~~~~~
+..\src\TP_2.c:20:7: warning: unused variable 'name' [-Wunused-variable]
+  char name[WORD_LIMIT];
+       ^~~~
+..\src\TP_2.c:19:6: warning: unused variable 'id' [-Wunused-variable]
+  int id;
+      ^~
+..\src\TP_2.c:40:7: warning: 'freePlace' may be used uninitialized in this function [-Wmaybe-uninitialized]
+       searchFree(list, LIMIT, freePlace);
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+..\src\validation.c: In function 'askForName':
+..\src\validation.c:96:6: warning: unused variable 'reportLimit' [-Wunused-variable]
+  int reportLimit;
+      ^~~~~~~~~~~
+..\src\validation.c:94:6: warning: unused variable 'lenght' [-Wunused-variable]
+  int lenght;
+      ^~~~~~
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+22:40:22 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:24:7: warning: unused variable 'flyCode' [-Wunused-variable]
+  char flyCode[CODE_LIMIT];
+       ^~~~~~~
+..\src\TP_2.c:23:6: warning: unused variable 'typePassenger' [-Wunused-variable]
+  int typePassenger;
+      ^~~~~~~~~~~~~
+..\src\TP_2.c:22:8: warning: unused variable 'price' [-Wunused-variable]
+  float price;
+        ^~~~~
+..\src\TP_2.c:21:7: warning: unused variable 'lastName' [-Wunused-variable]
+  char lastName[WORD_LIMIT];
+       ^~~~~~~~
+..\src\TP_2.c:20:7: warning: unused variable 'name' [-Wunused-variable]
+  char name[WORD_LIMIT];
+       ^~~~
+..\src\TP_2.c:19:6: warning: unused variable 'id' [-Wunused-variable]
+  int id;
+      ^~
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+22:41:45 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:43:7: warning: 'id' may be used uninitialized in this function [-Wmaybe-uninitialized]
+       addPassenger(list, LIMIT, id, name, lastName, price, typePassenger, flyCode);
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\TP_2.c:43:7: warning: 'price' may be used uninitialized in this function [-Wmaybe-uninitialized]
+..\src\TP_2.c:43:7: warning: 'typePassenger' may be used uninitialized in this function [-Wmaybe-uninitialized]
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+22:45:59 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:42:7: warning: 'price' may be used uninitialized in this function [-Wmaybe-uninitialized]
+       requestData(name, lastName, WORD_LIMIT, price, typePassenger, flyCode, CODE_LIMIT);
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\TP_2.c:42:7: warning: 'typePassenger' may be used uninitialized in this function [-Wmaybe-uninitialized]
+..\src\TP_2.c:44:7: warning: 'id' may be used uninitialized in this function [-Wmaybe-uninitialized]
+       addPassenger(list, LIMIT, id, name, lastName, price, typePassenger, flyCode);
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+22:55:39 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:42:7: warning: 'price' may be used uninitialized in this function [-Wmaybe-uninitialized]
+       requestData(name, lastName, WORD_LIMIT, price, typePassenger, flyCode, CODE_LIMIT);
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\TP_2.c:42:7: warning: 'typePassenger' may be used uninitialized in this function [-Wmaybe-uninitialized]
+..\src\TP_2.c:44:7: warning: 'id' may be used uninitialized in this function [-Wmaybe-uninitialized]
+       addPassenger(list, LIMIT, id, name, lastName, price, typePassenger, flyCode);
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+..\src\validation.c: In function 'requestNameOrSurname':
+..\src\validation.c:96:6: warning: unused variable 'reportLimit' [-Wunused-variable]
+  int reportLimit;
+      ^~~~~~~~~~~
+..\src\validation.c:94:6: warning: unused variable 'lenght' [-Wunused-variable]
+  int lenght;
+      ^~~~~~
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+22:56:30 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+22:57:00 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file TP_2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+22:57:02 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+22:57:32 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+22:59:05 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+23:08:36 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+..\src\validation.c: In function 'validateOnlyNumbersFloat':
+..\src\validation.c:104:4: warning: 'numberFloat' may be used uninitialized in this function [-Wmaybe-uninitialized]
+    itoa(numberFloat, word, 10);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:42:7: warning: 'price' may be used uninitialized in this function [-Wmaybe-uninitialized]
+       requestData(name, lastName, WORD_LIMIT, price, typePassenger, flyCode, CODE_LIMIT);
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\TP_2.c:42:7: warning: 'typePassenger' may be used uninitialized in this function [-Wmaybe-uninitialized]
+..\src\TP_2.c:44:7: warning: 'id' may be used uninitialized in this function [-Wmaybe-uninitialized]
+       addPassenger(list, LIMIT, id, name, lastName, price, typePassenger, flyCode);
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+23:09:23 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+23:09:26 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+..\src\validation.c: In function 'validateOnlyNumbersFloat':
+..\src\validation.c:104:26: error: unknown type name 'd'
+    numberFloat = *number;d
+                          ^
+..\src\validation.c:106:28: error: expected ')' before numeric constant
+    itoa(numberFloat, word, 10);
+                            ^~
+23:09:29 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+23:10:11 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:42:7: warning: 'price' may be used uninitialized in this function [-Wmaybe-uninitialized]
+       requestData(name, lastName, WORD_LIMIT, price, typePassenger, flyCode, CODE_LIMIT);
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\TP_2.c:42:7: warning: 'typePassenger' may be used uninitialized in this function [-Wmaybe-uninitialized]
+..\src\TP_2.c:44:7: warning: 'id' may be used uninitialized in this function [-Wmaybe-uninitialized]
+       addPassenger(list, LIMIT, id, name, lastName, price, typePassenger, flyCode);
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+23:12:42 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:42:47: error: incompatible type for argument 4 of 'requestData'
+       requestData(name, lastName, WORD_LIMIT, &price, &typePassenger, flyCode, CODE_LIMIT);
+                                               ^
+In file included from ..\src\TP_2.c:4:0:
+..\src\Passenger.h:26:5: note: expected 'float' but argument is of type 'float *'
+ int requestData(char name[], char lastName[], int lenWord, float price, int typePassenger, char flyCode[], int lenCode);
+     ^~~~~~~~~~~
+..\src\TP_2.c:42:55: warning: passing argument 5 of 'requestData' makes integer from pointer without a cast [-Wint-conversion]
+       requestData(name, lastName, WORD_LIMIT, &price, &typePassenger, flyCode, CODE_LIMIT);
+                                                       ^
+In file included from ..\src\TP_2.c:4:0:
+..\src\Passenger.h:26:5: note: expected 'int' but argument is of type 'int *'
+ int requestData(char name[], char lastName[], int lenWord, float price, int typePassenger, char flyCode[], int lenCode);
+     ^~~~~~~~~~~
+23:12:57 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:44:7: warning: 'id' may be used uninitialized in this function [-Wmaybe-uninitialized]
+       addPassenger(list, LIMIT, id, name, lastName, price, typePassenger, flyCode);
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+Info: Nothing to build for TP_2
+Info: Nothing to build for TP_2
+23:14:30 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+23:14:53 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+Info: Nothing to build for TP_2
+Info: Nothing to build for TP_2
+23:17:17 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:44:7: warning: 'id' may be used uninitialized in this function [-Wmaybe-uninitialized]
+       addPassenger(list, LIMIT, id, name, lastName, price, typePassenger, flyCode);
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+23:17:52 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+23:25:34 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:44:7: warning: 'id' may be used uninitialized in this function [-Wmaybe-uninitialized]
+       addPassenger(list, LIMIT, id, name, lastName, price, typePassenger, flyCode);
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\validation.o" 
+23:27:41 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:45:7: warning: 'id' may be used uninitialized in this function [-Wmaybe-uninitialized]
+       addPassenger(list, LIMIT, id, name, lastName, price, typePassenger, flyCode);
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TypePassenger.o" "..\\src\\TypePassenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+23:44:13 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:18:16: warning: unused variable 'cycle' [-Wunused-variable]
+  TypePassenger cycle[LIMIT_TYPE];
+                ^~~~~
+..\src\TP_2.c:47:7: warning: 'id' may be used uninitialized in this function [-Wmaybe-uninitialized]
+       addPassenger(list, LIMIT, id, name, lastName, price, typePassenger, flyCode);
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TypePassenger.o" "..\\src\\TypePassenger.c" 
+..\src\TypePassenger.c: In function 'initTypePassengers':
+..\src\TypePassenger.c:10:6: warning: unused variable 'i' [-Wunused-variable]
+  int i;
+      ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c: In function 'requestData':
+..\src\Passenger.c:69:4: error: too few arguments to function 'requestTypePassenger'
+    requestTypePassenger(&saveTypePassenger);
+    ^~~~~~~~~~~~~~~~~~~~
+In file included from ..\src\Passenger.c:5:0:
+..\src\Validation.h:12:5: note: declared here
+ int requestTypePassenger(int* typePassenger, int len);
+     ^~~~~~~~~~~~~~~~~~~~
+23:44:23 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c: In function 'requestData':
+..\src\Passenger.c:69:4: error: too few arguments to function 'requestTypePassenger'
+    requestTypePassenger(&saveTypePassenger);
+    ^~~~~~~~~~~~~~~~~~~~
+In file included from ..\src\Passenger.c:5:0:
+..\src\Validation.h:12:5: note: declared here
+ int requestTypePassenger(int* typePassenger, int len);
+     ^~~~~~~~~~~~~~~~~~~~
+23:44:47 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c: In function 'requestData':
+..\src\Passenger.c:69:4: error: too few arguments to function 'requestTypePassenger'
+    requestTypePassenger(&saveTypePassenger);
+    ^~~~~~~~~~~~~~~~~~~~
+In file included from ..\src\Passenger.c:5:0:
+..\src\Validation.h:12:5: note: declared here
+ int requestTypePassenger(int* typePassenger, int len);
+     ^~~~~~~~~~~~~~~~~~~~
+23:45:22 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:47:7: warning: 'id' may be used uninitialized in this function [-Wmaybe-uninitialized]
+       addPassenger(list, LIMIT, id, name, lastName, price, typePassenger, flyCode);
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+23:53:56 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+00:33:39 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:54:7: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+       for(i=0;i<LIMIT;i++);
+       ^~~
+..\src\TP_2.c:55:7: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+       {
+       ^
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+00:34:10 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+00:41:16 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file TP_2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+00:41:20 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+00:46:56 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:47:7: error: too few arguments to function 'requestData'
+       requestData(name, lastName, WORD_LIMIT, &price, &typePassenger, flyCode, CODE_LIMIT);
+       ^~~~~~~~~~~
+In file included from ..\src\TP_2.c:4:0:
+..\src\Passenger.h:30:5: note: declared here
+ int requestData(char name[], char lastName[], int lenWord, float* price, int* typePassenger, char flyCode[], int lenCode, int* statusFlight);
+     ^~~~~~~~~~~
+..\src\TP_2.c:49:7: error: too few arguments to function 'addPassenger'
+       addPassenger(list, LIMIT, id, name, lastName, price, typePassenger, flyCode);
+       ^~~~~~~~~~~~
+In file included from ..\src\TP_2.c:4:0:
+..\src\Passenger.h:31:5: note: declared here
+ int addPassenger(Passenger* list, int len, int id, char name[],char lastName[],float price,int typePassenger, char flycode[], int statusFlight);
+     ^~~~~~~~~~~~
+00:47:24 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:47:7: error: too few arguments to function 'requestData'
+       requestData(name, lastName, WORD_LIMIT, &price, &typePassenger, flyCode, CODE_LIMIT);
+       ^~~~~~~~~~~
+In file included from ..\src\TP_2.c:4:0:
+..\src\Passenger.h:30:5: note: declared here
+ int requestData(char name[], char lastName[], int lenWord, float* price, int* typePassenger, char flyCode[], int lenCode, int* statusFlight);
+     ^~~~~~~~~~~
+..\src\TP_2.c:49:7: error: too few arguments to function 'addPassenger'
+       addPassenger(list, LIMIT, id, name, lastName, price, typePassenger, flyCode);
+       ^~~~~~~~~~~~
+In file included from ..\src\TP_2.c:4:0:
+..\src\Passenger.h:31:5: note: declared here
+ int addPassenger(Passenger* list, int len, int id, char name[],char lastName[],float price,int typePassenger, char flycode[], int statusFlight);
+     ^~~~~~~~~~~~
+00:47:41 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+00:49:43 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+00:52:19 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+00:57:34 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c: In function 'addPassenger':
+..\src\Passenger.c:107:7: error: break statement not within loop or switch
+       break;
+       ^~~~~
+00:57:47 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c: In function 'addPassenger':
+..\src\Passenger.c:96:11: warning: 'i' may be used uninitialized in this function [-Wmaybe-uninitialized]
+       list[i].id = id;
+           ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file TP_2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+00:58:00 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c: In function 'addPassenger':
+..\src\Passenger.c:86:6: warning: unused variable 'i' [-Wunused-variable]
+  int i;
+      ^
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file TP_2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+00:58:05 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+Info: Nothing to build for TP_2
+Info: Nothing to build for TP_2
+01:01:12 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+Info: Nothing to build for TP_2
+01:03:01 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:45:7: warning: 'id' may be used uninitialized in this function [-Wmaybe-uninitialized]
+       addPassenger(list, LIMIT, id, name, lastName, price, typePassenger, flyCode, statusFlight);
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+01:03:32 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+01:08:15 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:31:6: warning: unused variable 'i' [-Wunused-variable]
+  int i;
+      ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+01:12:37 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+01:17:54 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c:157:37: error: expected declaration specifiers or '...' before ')' token
+ int modifyPassenger(Passenger* list,)
+                                     ^
+01:20:18 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+01:24:16 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TypePassenger.o" "..\\src\\TypePassenger.c" 
+..\src\TypePassenger.c: In function 'initTypePassengers':
+..\src\TypePassenger.c:10:6: warning: unused variable 'i' [-Wunused-variable]
+  int i;
+      ^
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+01:24:43 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TypePassenger.o" "..\\src\\TypePassenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+01:33:25 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c:27:5: error: conflicting types for 'searchFree'
+ int searchFree(Passenger* list, int len)
+     ^~~~~~~~~~
+In file included from ..\src\Passenger.c:4:0:
+..\src\Passenger.h:28:5: note: previous declaration of 'searchFree' was here
+ int searchFree(Passenger* list, int len, int* free);
+     ^~~~~~~~~~
+..\src\Passenger.c: In function 'findPassengerById':
+..\src\Passenger.c:56:6: warning: unused variable 'optionSecondMenu' [-Wunused-variable]
+  int optionSecondMenu;
+      ^~~~~~~~~~~~~~~~
+..\src\Passenger.c: In function 'addPassenger':
+..\src\Passenger.c:113:5: error: too many arguments to function 'searchFree'
+     searchFree(list, len, &freePlace);
+     ^~~~~~~~~~
+..\src\Passenger.c:27:5: note: declared here
+ int searchFree(Passenger* list, int len)
+     ^~~~~~~~~~
+01:34:58 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c:27:5: error: conflicting types for 'searchFree'
+ int searchFree(Passenger* list, int len)
+     ^~~~~~~~~~
+In file included from ..\src\Passenger.c:4:0:
+..\src\Passenger.h:28:5: note: previous declaration of 'searchFree' was here
+ int searchFree(Passenger* list, int len, int* free);
+     ^~~~~~~~~~
+..\src\Passenger.c: In function 'addPassenger':
+..\src\Passenger.c:113:5: error: too many arguments to function 'searchFree'
+     searchFree(list, len, &freePlace);
+     ^~~~~~~~~~
+..\src\Passenger.c:27:5: note: declared here
+ int searchFree(Passenger* list, int len)
+     ^~~~~~~~~~
+01:35:33 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+01:38:52 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+Info: Nothing to build for TP_2
+01:41:41 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+01:44:06 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+01:50:37 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c: In function 'modifyName':
+..\src\Passenger.c:168:25: error: assignment to expression with array type
+    list[freePlace].name = name;
+                         ^
+01:51:04 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+01:52:09 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+Info: Nothing to build for TP_2
+14:11:47 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+14:12:44 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+14:14:26 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+14:20:46 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+14:21:19 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+14:31:13 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:79:13: warning: implicit declaration of function 'modifyTypePassenger' [-Wimplicit-function-declaration]
+             modifyTypePassenger();
+             ^~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+14:31:47 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+Info: Nothing to build for TP_2
+Info: Nothing to build for TP_2
+14:39:22 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+14:49:06 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c: In function 'savePosition':
+..\src\Passenger.c:55:6: warning: unused variable 'savePos' [-Wunused-variable]
+  int savePos;
+      ^~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+..\src\TP_2.c: In function 'main':
+..\src\TP_2.c:32:6: warning: unused variable 'optionSecondMenu' [-Wunused-variable]
+  int optionSecondMenu;
+      ^~~~~~~~~~~~~~~~
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+14:49:31 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+14:51:23 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+14:52:15 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+14:54:14 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+14:54:58 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+15:00:04 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c: In function 'modifyCode':
+..\src\Passenger.c:270:27: error: assignment to expression with array type
+    list[position].flycode = flyCode;
+                           ^
+15:00:55 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+15:05:56 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+15:10:27 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+15:11:09 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+15:11:37 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+15:12:36 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+15:13:36 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+17:48:06 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+17:49:06 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+17:51:03 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+17:53:06 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+Info: Nothing to build for TP_2
+17:56:32 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+Info: Nothing to build for TP_2
+12:49:54 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+Info: Nothing to build for TP_2
+Info: Nothing to build for TP_2
+12:51:11 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+02:44:28 **** Rebuild of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TypePassenger.o" "..\\src\\TypePassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+02:45:54 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+Info: Nothing to build for TP_2
+Info: Nothing to build for TP_2
+02:48:31 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+02:49:25 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file TP_2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+02:49:28 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -o TP_2.exe "src\\Menu.o" "src\\Passenger.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+15:20:03 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c:5:28: fatal error: ArrayPassenger.h: No such file or directory
+ #include "ArrayPassenger.h"
+                            ^
+compilation terminated.
+15:20:58 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\ArrayPassenger.o" "src\\Menu.o" "src\\TP_2.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+15:50:54 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\ArrayPassenger.o" "src\\Menu.o" "src\\TP_2.o" "src\\validation.o" 
+16:11:40 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\ArrayPassenger.o" "src\\Menu.o" "src\\TP_2.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+16:14:25 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\ArrayPassenger.o" "src\\Menu.o" "src\\TP_2.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+20:53:09 **** Rebuild of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -o TP_2.exe "src\\ArrayPassenger.o" "src\\Menu.o" "src\\TP_2.o" "src\\validation.o" 
+20:54:32 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\ArrayPassenger.o" "src\\Menu.o" "src\\TP_2.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+20:54:57 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -o TP_2.exe "src\\ArrayPassenger.o" "src\\Menu.o" "src\\TP_2.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+21:16:12 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -o TP_2.exe "src\\ArrayPassenger.o" "src\\Menu.o" "src\\TP_2.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+21:18:36 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\ArrayPassenger.o" "src\\Menu.o" "src\\TP_2.o" "src\\validation.o" 
+Info: Nothing to build for TP_2
+21:19:32 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_2.exe "src\\ArrayPassenger.o" "src\\Menu.o" "src\\TP_2.o" "src\\validation.o" 
+Info: Nothing to build for TP_2

@@ -765,3 +765,79 @@ int printTypeInt(int num, char* message)
 
 	return report;
 }
+
+/**
+ * @brief forcefully loads passengers into the system
+ *
+ * @param list Passenger* pointer to array of passenger
+ * @param len	int Array lenght
+ * @param counterId int pointer
+ * @return	Return passenger index position or (-1) if [Invalid length or NULL pointer]- if (1) [if the data was not loaded correctly] - if (0) OK
+ */
+int forcedLoad(Passenger* list, int len, int* counterId)
+{
+	int report=-1;
+	int i;
+	int id;
+	int reportAdd;
+
+		if(list != NULL && len > 0)
+		{
+			report = 1;
+
+				//TypePassenger 1000 - 1010 - 1020	//StatusFlig 3000 -  3100
+
+				strcpy(list[0].name, "Gonzalo");
+				strcpy(list[0].lastName, "Lemiña");
+				list[0].price = 1334.22;
+				strcpy(list[0].flycode, "d2090");
+				list[0].typePassenger = 1000;
+				list[0].statusFlight = 3000;
+
+				strcpy(list[1].name, "Valeria");
+				strcpy(list[1].lastName, "Vazquez");
+				list[1].price = 5604.22;
+				strcpy(list[1].flycode, "d9020");
+				list[1].typePassenger = 1020;
+				list[1].statusFlight = 3000;
+
+				strcpy(list[2].name, "Leonardo");
+				strcpy(list[2].lastName, "Gilardi");
+				list[2].price = 2500.11;
+				strcpy(list[2].flycode, "f1923");
+				list[2].typePassenger = 1020;
+				list[2].statusFlight = 3100;
+
+				strcpy(list[3].name, "Santino");
+				strcpy(list[3].lastName, "Gilardi");
+				list[3].price = 2500.11;
+				strcpy(list[3].flycode, "a1943");
+				list[3].typePassenger = 1000;
+				list[3].statusFlight = 3000;
+
+				strcpy(list[4].name, "Juan");
+				strcpy(list[4].lastName, "Gonzalez");
+				list[4].price = 7234.11;
+				strcpy(list[4].flycode, "p9841");
+				list[4].typePassenger = 1020;
+				list[4].statusFlight = 3100;
+
+				for(i=0;i<5;i++)
+				{
+					assignId(&counterId, &id);
+					list[i].id = id;
+
+					reportAdd =	addPassenger(list, len, id, list[i].name, list[i].lastName, list[i].price, list[i].typePassenger, list[i].flycode, list[i].statusFlight);
+
+				}
+
+				if(reportAdd == 0)
+				{
+					report = 0;
+				}
+
+		}
+
+	return report;
+}
+
