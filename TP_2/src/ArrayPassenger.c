@@ -11,35 +11,6 @@
 #define LIMIT_CODE 10
 
 /**
- * @brief Harcodea the data
- *
- * @param listType eTypePassenger* Pointer to array of passenger
- * @return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
- */
-int forceDataTypePassenger(eTypePassenger* listType)
-{
-	 int report = -1;
-
-		if(listType != NULL)
-		{
-			report = 0;
-
-			listType[0].idTypePassenger = 1000;
-				strncpy(listType[0].description, "Niño", 51);
-
-			listType[1].idTypePassenger = 1010;
-				strncpy(listType[1].description, "Adulto", 51);
-
-			listType[2].idTypePassenger = 1020;
-				strncpy(listType[2].description, "Anciano", 51);
-
-		}
-
-	return report;
-}
-
-
-/**
  * @brief print list the eTypePassenger
  *
  * @param listType eTypePassenger* Pointer to array of passenger
@@ -64,30 +35,6 @@ int printTypePassenger(eTypePassenger* listType, int len)
 	return report;
 }
 
-/**
- * @brief Harcodea the data eStatusFlight
- *
- * @param eStatusFlight* Pointer to array of passenger
- * @return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
- */
-int forceDatastatusFlight(eStatusFlight* listStatus)
-{
-	int report = -1;
-
-		if(listStatus != NULL)
-		{
-			report = 0;
-
-				listStatus[0].idStatusFlight = 3000;
-					strncpy(listStatus[0].description, "Activo", 51);
-
-				listStatus[1].idStatusFlight = 3100;
-					strncpy(listStatus[1].description, "Inactivo", 51);
-
-		}
-
-	return report;
-}
 
 /**
  * @brief print list type eStatusFlight
@@ -137,6 +84,35 @@ int initPassengers(Passenger* list, int len)
 					list[i].isEmpty = 1;
 				}
 
+		}
+
+	return report;
+}
+
+/**
+ * @brief It is in charge of knowing if there is housing data loaded
+ *
+ * @param list Passenger* Pointer to array of passenger
+ * @param len int
+ * @return report (-1) [If the structure Passenger arrived in NULL] - report (-2) [If there is no passenger loaded] -  report (0) if OK
+ */
+int searchHousingLoaded(Passenger* list, int len)
+{
+	int report = -1;
+	int i;
+
+		if(list != NULL && len > 0)
+		{
+			report = -2;
+
+			for(i=0;i<len;i++)
+			{
+				if( list[i].isEmpty == 0 )
+				{
+					report = 0;
+					break;
+				}
+			}
 		}
 
 	return report;
@@ -308,30 +284,191 @@ int askForInformation(Passenger* list, int len, eTypePassenger* listType, int le
 * \param list Passenger* Pointer to array of passenger
 * \param int Array length
 * \param id int parameter to compare
-* \return Return passenger index position or (-1) if [Invalid length or NULL pointer received or passenger not found]- if (1) [the id was not found] - if (0) OK
+* \return Return passenger index position or (-1) if [Invalid length or NULL pointer received or passenger not found]- if (-2) [the id was not found] - if (return the position) OK
 *
 */
-int findPassengerById(Passenger* list, int len, int id, int* position)
+int findPassengerById(Passenger* list, int len, int id)
 {
 	int report = -1;
 	int i;
 
-		if(list != NULL && len > 0 && id >= 0 && position >= 0)
+		if(list != NULL && len > 0 && id >= 0)
 		{
-			report = 1;
+			report = -2;
 
 				for(i=0;i<len;i++)
 				{
 					if(list[i].id == id)
 					{
-						report = 0;
-						(*position) = i;
+						report = i;
 						break;
 					}
 				}
 
 		}
 
+
+	return report;
+}
+
+/**
+ * @brief It asks for the id and looks for it to see if it exists and returns the ID
+ *
+ * @param list Passenger* Pointer to array of passenger
+ * @param len int
+ * @param listType eTypePassenger* Pointer to array of passenger
+ * @param lenType int
+ * @param listStatus eStatusFligh* Pointer to array of passenger
+ * @param lenStatus int
+ * @return Return passenger index position or (-1) if [Invalid length or NULL pointer received or passenger not found]- if (-2) [the id was not found] - if (return the position) OK
+ *
+ */
+int requestid(Passenger* list, int len, eTypePassenger* listType, int lenType, eStatusFlight* listStatus, int lenStatus)
+{
+	int report = -1;
+	int id;
+	int reportId;
+	int reportValidateId;
+	int pos;
+
+		if(list != NULL && len > 0 && listType != NULL && lenType > 0 && listStatus != NULL && lenStatus > 0)
+		{
+			report = -2;
+
+			reportId = printPassenger(list, len, listType, lenType, listStatus, lenStatus);
+			reportValidateId  = getNumberTypeInt(&id, "Ingrese el ID: ", "Error. Solo se pueden ingresar numeros\n", 0, 2001, 3);
+
+				if(reportValidateId == 0 && reportId != -1 && reportId != -2)
+				{
+					pos = findPassengerById(list, len, id);
+					report = pos;
+				}
+
+		}
+
+	return report;
+}
+
+/**
+ * @brief Modify one of the values â€‹â€‹of Passenger that the user wants
+ *
+ * @param list * Pointer to array of passenger
+ * @param position int
+ * @param listType* Pointer to array of passenger
+ * @param lenType int
+ * @param eStatusFligh* Pointer to array of passenger
+ * @param lenStatus int
+ * @param option int
+ * @return report (-1) [If any of the pointers arrived in NULL] - report (1) [If the modified data could not be saved] - report (0) if OK
+ */
+int modifyPassengerData(Passenger* list, int position, eTypePassenger* listType, int lenType, eStatusFlight* listStatus, int lenStatus, int option)
+{
+	int report = -1;
+
+	int reportName;
+	int reportLastName;
+	int reportPrice;
+	int reportCode;
+	int reportType;
+	int reportStatus;
+
+	Passenger aux;
+
+		if(list != NULL && position >= 0 && listType != NULL && lenType > 0 && listStatus != NULL && lenStatus > 0  && option > 0)
+		{
+			report = 1;
+
+				switch(option)
+				{
+					case 1:
+
+						strcpy(aux.name, list[position].name);
+							reportName = getNameOrLastName(list[position].name, LIMIT_NAME, "Nombre del pasajero: ", "Error. Introdusca bien el nombre\n", 3);
+
+								if(reportName != 0)
+								{
+									report = 0;
+									strcpy(list[position].name, aux.name);
+								}
+
+					break;
+
+					case 2:
+						strcpy(aux.lastName, list[position].lastName);
+						reportLastName = getNameOrLastName(list[position].lastName, LIMIT_LASTNAME, "Apellido del pasajero: ", "Error. Introdusca bien el apellido\n", 3);
+
+							if(reportLastName != 0)
+							{	report = 0;
+								strcpy(list[position].lastName, aux.lastName);
+							}
+					break;
+
+					case 3:
+						aux.price = list[position].price;
+						reportPrice = getNumberTypeFloat(&list[position].price, "Ingrese precio: ", "Error. Introdusca bien el precio\n", 1, 1000000, 3);
+
+							if(reportPrice != 0)
+							{
+								report = 0;
+								list[position].price = aux.price;
+							}
+					break;
+
+					case 4:
+						strcpy(aux.flycode, list[position].flycode);
+								reportCode = getNumberAlphanumeric(list[position].flycode, LIMIT_CODE, "Ingrese codigo de vuelo: ", "Error. Solo se permiten letras y numeros\n", 3);
+									if(reportCode != 0)
+									{
+										report = 0;
+										strcpy(list[position].flycode, aux.flycode);
+									}
+					break;
+
+					case 5:
+						aux.typePassenger = list[position].typePassenger;
+
+							printTypePassenger(listType, lenType);
+							reportType = getNumberTypeInt(&list[position].typePassenger, "\nIngrese el tipo de pasajero: ", "Error. Ingrese bien el tipo de pasajero\n", 999, 1100, 3);
+								if(reportType != 0)
+								{
+									report = 0;
+									list[position].typePassenger = aux.typePassenger;
+								}
+					break;
+
+					case 6:
+						aux.statusFlight = list[position].statusFlight;
+
+									printStatusflight(listStatus, lenStatus);
+									reportStatus = getNumberTypeInt(&list[position].statusFlight, "\nIngrese el estado del vuelo: ", "Error. Ingrese bien el estado del vuelo\n", 2999, 3101, 3);
+										if(reportStatus != 0)
+										{
+											report = 0;
+											list[position].statusFlight = aux.statusFlight;
+										}
+					break;
+				}
+		}
+
+	return report;
+}
+
+/**
+ * @brief they pass the list of passengers, the position and return the id
+ *
+ * @param list	* Pointer to array of passenger
+ * @param position int
+ * @return report (-1) [If any of the pointers arrived in NULL] - report (return the position) if OK
+ */
+int returnId(Passenger* list, int position)
+{
+	int report = -1;
+
+		if(list != NULL && position >= 0)
+		{
+			report = list[position].id;
+
+		}
 
 	return report;
 }
@@ -348,22 +485,13 @@ find a passenger] - (0) if Ok
 int removePassenger(Passenger* list, int len, int id)
 {
 	int report = -1;
-	int i;
-
-		if(list != NULL && len >= 0 && id > 0)
-		{
-			report = 0;
-
-				for(i=0;i<len;i++)
-				{
-					if(list[i].id == id)
-					{
-						modifyIsEmpty(list, i, 1);
-					}
-				}
 
 
-		}
+				report = 0;
+
+				list[len].isEmpty = 1;
+
+
 
 	return report;
 }
@@ -724,47 +852,7 @@ int getHowManyExceedAverage(Passenger* list, int len, float average, int* counte
 	return report;
 }
 
-/**
- * @brief print message the type float
- *
- * @param num float
- * @param message char pointer
- * @return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
- */
-int printTypefloat(float num, char* message)
-{
-	int report = -1;
 
-		if(num >= 0 && message != NULL)
-		{
-			report = 0;
-
-			printf("%s%.2f", message, num);
-		}
-
-	return report;
-}
-
-/**
- * @brief print message the type int
- *
- * @param num int
- * @param message char pointer
- * @return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
- */
-int printTypeInt(int num, char* message)
-{
-	int report = -1;
-
-		if(num >= 0 && message != NULL)
-		{
-			report = 0;
-
-			printf("%s%d", message, num);
-		}
-
-	return report;
-}
 
 /**
  * @brief forcefully loads passengers into the system
@@ -788,7 +876,7 @@ int forcedLoad(Passenger* list, int len, int* counterId)
 				//TypePassenger 1000 - 1010 - 1020	//StatusFlig 3000 -  3100
 
 				strcpy(list[0].name, "Gonzalo");
-				strcpy(list[0].lastName, "Lemiña");
+				strcpy(list[0].lastName, "LemiÃ±a");
 				list[0].price = 1334.22;
 				strcpy(list[0].flycode, "d2090");
 				list[0].typePassenger = 1000;

@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "Menu.h"
-#include "Validation.h"
-
+#include "Validations.h"
 
 /**
  * @brief measure the length of a chain
@@ -12,7 +10,7 @@
  * @param length int pointer
  * @return	Return (-1) if [Invalid length or NULL pointer] - if (0) OK
  */
-int measureLength(char string[], int* length)
+int measureLength(char* string, int* length)
 {
 	int report = -1;
 
@@ -34,7 +32,7 @@ int measureLength(char string[], int* length)
  * @param len int limit
  * @return Return (-1) if [Invalid length or NULL pointer] - if (1)[exceeds the maximum length] - if (0) OK
  */
-int validateLength(char* chains, int len)
+int validateLength(char* chains, int len, int min)
 {
 	int report = -1;
 	int length;
@@ -45,13 +43,97 @@ int validateLength(char* chains, int len)
 
 			length = strlen(chains);
 
-				if(length < len)
+				if(length < len && length >= min)
 				{
 					report = 0;
 				}
 				else
 				{
 					report = 1;
+				}
+
+		}
+
+	return report;
+}
+
+/**
+ * @brief Validate that it is only an integer
+ *
+ * @param buffer char pointer
+ * @param lenght int limit
+ * @return	Return (-1) if [Invalid length or NULL pointer] - if (1)[found an invalid character] - if (0) OK
+ */
+int validateNumberInt(char* buffer, int lenght)
+{
+	int report = -1;
+	int i;
+
+		if(buffer != NULL && lenght > 0)
+		{
+			report = 0;
+
+			for(i=0;i<lenght;i++)
+			{
+				if(buffer[i] < 48 || buffer[i] > 57)
+				{
+					report = 1;
+					break;
+				}
+			}
+
+		}
+
+	return report;
+}
+
+/**
+ * @brief asks for an integer data type
+ *
+ * @param number int pointer
+ * @param message	char pointer message coming out
+ * @param messageError char message of error
+ * @param min int num minimum
+ * @param max int maximum
+ * @param Attempts int number of attempts
+ * @return	Return (-1) if [Invalid length or NULL pointer] - if (1)[data was not loaded] - if (0) OK
+ */
+int getNumberTypeInt(int* number, char* message, char* messageError, int min, int max,  int Attempts)
+{
+	int report = -1;
+	char buffer[4096];
+	int lenght;
+	int reportNumber;
+	int NumConverted;
+
+		if(min >= 0 && max <= 1000000 && message != NULL && messageError != NULL && Attempts > 0)
+		{
+				while(Attempts >= 0)
+				{
+					report = 1;
+
+					Attempts--;
+
+					printf("%s", message);
+					fflush(stdin);
+					gets(buffer);
+
+					measureLength(buffer, &lenght);
+
+					reportNumber = validateNumberInt(buffer, lenght);
+
+					NumConverted = atoi(buffer);
+
+						if(reportNumber == 0 && NumConverted >= min && NumConverted <= max)
+						{
+							report = 0;
+							*number = NumConverted;
+							break;
+						}
+						else
+						{
+							printf("%s\n", messageError);
+						}
 				}
 
 		}
@@ -120,7 +202,7 @@ int getNameOrLastName(char* pResult, int len, char* message, char* messageError,
 
 						measureLength(buffer, &lenght);
 
-						reportLength = validateLength(buffer, len);
+						reportLength = validateLength(buffer, len, 3);
 						reportLetters = validateOnlyLetters(buffer, lenght);
 
 						if(reportLetters == 0 && reportLength == 0)
@@ -135,56 +217,6 @@ int getNameOrLastName(char* pResult, int len, char* message, char* messageError,
 						}
 			}
 
-		}
-
-	return report;
-}
-
-/**
- * @brief ask for a float type number
- *
- * @param number float pointer
- * @param message	char pointer message coming out
- * @param messageError char message of error
- * @param min float num minimum
- * @param max float maximum
- * @param Attempts int number of attempts
- * @return Return (-1) if [Invalid length or NULL pointer] - if (1)[data was not loaded] - if (0) OK
- */
-int getNumberTypeFloat(float* number, char* message, char*messageError, float min, float max, int Attempts)
-{
-	int report = -1;
-	char numberFloat[4096];
-	int reportFloat;
-	int lenght;
-	float NumConverted;
-
-		if(min > 0.01 && max < 10000000 && message != NULL && messageError != NULL && Attempts > 0)
-		{
-			report = 1;
-
-				while(Attempts>=0)
-				{
-					Attempts--;
-
-					printf("%s", message);
-						fflush(stdin);
-						gets(numberFloat);
-
-					measureLength(numberFloat, &lenght);
-
-					reportFloat = validateNumberFloat(numberFloat, lenght);
-
-					NumConverted = atof(numberFloat);
-
-						if(reportFloat == 0 && NumConverted > min && NumConverted < max)
-						{
-							report = 0;
-							*number = NumConverted;
-							break;
-						}
-
-				}
 		}
 
 	return report;
@@ -233,6 +265,60 @@ int validateNumberFloat(char* buffer, int len)
 
 	return report;
 }
+
+
+/**
+ * @brief ask for a float type number
+ *
+ * @param number float pointer
+ * @param message	char pointer message coming out
+ * @param messageError char message of error
+ * @param min float num minimum
+ * @param max float maximum
+ * @param Attempts int number of attempts
+ * @return Return (-1) if [Invalid length or NULL pointer] - if (1)[data was not loaded] - if (0) OK
+ */
+int getNumberTypeFloat(float* number, char* message, char*messageError, float min, float max, int Attempts)
+{
+	int report = -1;
+	char numberFloat[4096];
+	int reportFloat;
+	int lenght;
+	float NumConverted;
+
+		if(min >= 0.01 && max <= 10000000 && message != NULL && messageError != NULL && Attempts > 0)
+		{
+			report = 1;
+
+				while(Attempts>=0)
+				{
+					Attempts--;
+
+					printf("%s", message);
+						fflush(stdin);
+						gets(numberFloat);
+
+					measureLength(numberFloat, &lenght);
+
+					reportFloat = validateNumberFloat(numberFloat, lenght);
+
+					NumConverted = atof(numberFloat);
+
+						if(reportFloat == 0 && NumConverted >= min && NumConverted <= max)
+						{
+							report = 0;
+							*number = NumConverted;
+							break;
+						}
+
+					printf("%s\n",messageError);
+
+				}
+		}
+
+	return report;
+}
+
 
 /**
  * @brief Validate that they are only alphanumeric characters
@@ -295,7 +381,7 @@ int getNumberAlphanumeric(char* alphaNumeic, int len, char* message, char*messag
 
 					measureLength(buffer, &lenght);
 
-					reportLength = validateLength(buffer, len);
+					reportLength = validateLength(buffer, len, 3);
 					reportLetterNumbers = validateOnlyLettersAndNumbers(buffer, lenght);
 
 						if(reportLength == 0 && reportLetterNumbers == 0 )
@@ -304,6 +390,7 @@ int getNumberAlphanumeric(char* alphaNumeic, int len, char* message, char*messag
 							report = 0;
 							break;
 						}
+					printf("%s\n", messageError);
 				}
 
 
@@ -313,153 +400,81 @@ int getNumberAlphanumeric(char* alphaNumeic, int len, char* message, char*messag
 }
 
 /**
- * @brief Validate that it is only an integer
+ * @brief validate that they are letters and space
  *
- * @param buffer char pointer
- * @param lenght int limit
+ * @param chains char pointer
+ * @param len int limit
  * @return	Return (-1) if [Invalid length or NULL pointer] - if (1)[found an invalid character] - if (0) OK
  */
-int validateNumberInt(char* buffer, int lenght)
+int validateOnlyLettersAndSpace(char* chains, int len)
 {
 	int report = -1;
 	int i;
 
-		if(buffer != NULL && lenght > 0)
+		if(chains != NULL && len > 0)
 		{
 			report = 0;
-
-			for(i=0;i<lenght;i++)
+			for(i=0;i<len;i++)
 			{
-				if(buffer[i] < 48 || buffer[i] > 57)
+				if( *(chains+i) != 32 && (chains[i] < 65 || chains[i] > 90) && (chains[i] < 97 || chains[i] > 122))
 				{
 					report = 1;
 					break;
 				}
 			}
-
 		}
 
 	return report;
 }
 
 /**
- * @brief asks for an integer data type
+ * @brief asks you to enter a flight status
  *
- * @param number int pointer
+ * @param pResult char pointer save name or latName
+ * @param len	int limit
  * @param message	char pointer message coming out
  * @param messageError char message of error
- * @param min int num minimum
- * @param max int maximum
  * @param Attempts int number of attempts
- * @return	Return (-1) if [Invalid length or NULL pointer] - if (1)[data was not loaded] - if (0) OK
+ * @return Return (-1) if [Invalid length or NULL pointer] - if (1)[data was not loaded] - if (0) OK
  */
-int getNumberTypeInt(int* number, char* message, char* messageError, int min, int max,  int Attempts)
+int getStatusFlight(char* pResult, int len, char* message, char* messageError, int Attempts)
 {
 	int report = -1;
+	int reportLetters;
+	int reportLength;
 	char buffer[4096];
+
 	int lenght;
-	int reportNumber;
-	int NumConverted;
 
-		if(min >= 0 && max < 1000000 && message != NULL && messageError != NULL && Attempts > 0)
+		if(pResult != NULL && len > 0 && message != NULL && messageError != NULL && Attempts > 0)
 		{
-				while(Attempts >= 0)
-				{
-					report = 1;
+			while(Attempts >= 0)
+			{
+				report = 1;
 
-					Attempts--;
+				Attempts--;
 
 					printf("%s", message);
-					fflush(stdin);
-					gets(buffer);
+						fflush(stdin);
+						gets(buffer);
 
-					measureLength(buffer, &lenght);
+						measureLength(buffer, &lenght);
 
-					reportNumber = validateNumberInt(buffer, lenght);
+						reportLength = validateLength(buffer, len, 3);
+						reportLetters = validateOnlyLettersAndSpace(buffer, lenght);
 
-					NumConverted = atoi(buffer);
-
-						if(reportNumber == 0 && NumConverted > min && NumConverted < max)
+						if(reportLetters == 0 && reportLength == 0)
 						{
 							report = 0;
-							*number = NumConverted;
+							strncpy(pResult, buffer, len);
 							break;
 						}
 						else
 						{
 							printf("%s\n", messageError);
 						}
-				}
+			}
 
-		}
-
-	return report;
-}
-
-/**
- * @brief assign an id
- *
- * @param counterId int pointer accountant who misses
- * @param id int
- * @return	Return (-1) if [Invalid length or NULL pointer] - if (0) OK
- */
-int assignId(int** counterId, int* id)
-{
-	int report = -1;
-	int counter;
-
-		if(counterId >= 0)
-		{
-			report = 0;
-
-			counter = **counterId;
-			counter++;
-
-			(**counterId) = counter;
-			(*id) = counter;
-
-		}
-
-	return report;
-}
-
-/**
- * @brief print message the type float
- *
- * @param num float
- * @param message char pointer
- * @return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
- */
-int printTypefloat(float num, char* message)
-{
-	int report = -1;
-
-		if(num >= 0 && message != NULL)
-		{
-			report = 0;
-
-			printf("%s%.2f", message, num);
-		}
-
-	return report;
-}
-
-/**
- * @brief print message the type int
- *
- * @param num int
- * @param message char pointer
- * @return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
- */
-int printTypeInt(int num, char* message)
-{
-	int report = -1;
-
-		if(num >= 0 && message != NULL)
-		{
-			report = 0;
-
-			printf("%s%d", message, num);
 		}
 
 	return report;

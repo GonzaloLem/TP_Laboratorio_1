@@ -29,11 +29,10 @@ void printMenuSecond()
 	printf("\n1.Modificar Nombre\n"
 			"2.Modificar Apellido\n"
 			"3.Modificar Precio\n"
-			"4. Modificar Codigo\n"
-			"5.Modificar Tipo de Pasajero\n"
+			"4.Modificar Tipo de Pasajero\n"
+			"5. Modificar Codigo\n"
 			"6. Modificar estado del vuelo\n."
-			"7.Regresar\n"
-			"-Opcion: ");
+			"7.Regresar\n");
 }
 
 /**
