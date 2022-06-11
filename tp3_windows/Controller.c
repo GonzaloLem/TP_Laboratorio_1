@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "Passenger.h"
-#include "Menu.h"
-#include "Validations.h"
 #include "LinkedList.h"
+#include "Passenger.h"
+#include "Parser.h"
+#include "Validations.h"
+#include "Menu.h"
 #include "Controller.h"
 
 /** \brief Carga los datos de los pasajeros desde el archivo data.csv (modo texto).
@@ -14,39 +15,21 @@
  * \return int
  *
  */
-//int controller_loadFromText(char* path , LinkedList* pArrayListPassenger)
-int controller_loadFromText(char* path , LinkedList* pArrayListPassenger, Passenger** list, int len, TypePassenger* type, int lenType, int* id, int* flagLoad)
+int controller_loadFromText(char* path , LinkedList* pArrayListPassenger)
 {
+	FILE* pFile;
+
 	int report = -1;
-	int reportLoadDate;
 
-		if(path != NULL &&  pArrayListPassenger != NULL && list != NULL && len > 0 && type != NULL && lenType > 0 && id != NULL)
+		if(path != NULL && pArrayListPassenger != NULL)
 		{
-			report = -2;
-
-				if(*flagLoad == 0)
+			pFile = fopen(path, "r");
+				if(pFile != NULL)
 				{
-					reportLoadDate = passenger_loadDate(list, len, type, lenType, path, &id);
-
-						if(reportLoadDate == 0)
-						{
-							report = 0;
-							printf("Los datos se cargaron correctamente\n");
-							*flagLoad = 1;
-						}
-						else
-						{
-							if(reportLoadDate == -3)
-							{
-								printf("No hay datos para cargar en el sistema\n");
-							}
-						}
+					report = 0;
+					parser_PassengerFromText(pFile ,pArrayListPassenger);
 				}
-				else
-				{
-					printf("Los datos ya fueron cargados\n");
-				}
-
+			fclose(pFile);
 
 		}
 
@@ -62,7 +45,26 @@ int controller_loadFromText(char* path , LinkedList* pArrayListPassenger, Passen
  */
 int controller_loadFromBinary(char* path , LinkedList* pArrayListPassenger)
 {
-    return 1;
+	FILE* pFile;
+	int report = -1;
+
+
+		if(path != NULL && pArrayListPassenger != NULL)
+		{
+			report = -2;
+
+				pFile = fopen(path, "rb");
+
+					if(pFile != NULL)
+					{
+						report = 0;
+						 parser_PassengerFromBinary(pFile ,pArrayListPassenger);
+						fclose(pFile);
+					}
+
+		}
+
+    return report;
 }
 
 /** \brief Alta de pasajero
@@ -72,20 +74,27 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListPassenger)
  * \return int
  *
  */
-//(Passenger** list, int len, TypePassenger* type, int lenType, int* id
-//int controller_addPassenger(LinkedList* pArrayListPassenger)
-int controller_addPassenger(LinkedList* pArrayListPassenger, Passenger** list, int len, TypePassenger* type, int lenType, int* id)
+int controller_addPassenger(LinkedList* pArrayListPassenger)
 {
-	int report = -1;
 
-		if(pArrayListPassenger != NULL && list != NULL && len > 0 && type != NULL && lenType > 0 && id != NULL)
+	Passenger* list = NULL;
+
+	int report = -1;			//FORMA CORRECTA DE HACER EL CONTROLLER
+
+
+		if(pArrayListPassenger != NULL)
 		{
 			report = -2;
 
-			addPassenger(list, len, type,lenType, &id);
+			list = addPassenger(pArrayListPassenger);
+				if(list != NULL)
+				{
+					report = 0;
+					ll_add(pArrayListPassenger , list );
+				}
+
+
 		}
-
-
 
     return report;
 }
@@ -97,16 +106,27 @@ int controller_addPassenger(LinkedList* pArrayListPassenger, Passenger** list, i
  * \return int
  *
  */
-//int controller_editPassenger(LinkedList* pArrayListPassenger)
-int controller_editPassenger(LinkedList* pArrayListPassenger, Passenger** list, int len,TypePassenger* type, int lenType)
+int controller_editPassenger(LinkedList* pArrayListPassenger)
 {
+	Passenger* list;
+
 	int report = -1;
+	int index;
 
-		if(pArrayListPassenger != NULL && list != NULL && len > 0 && type != NULL && lenType > 0)
+		if(pArrayListPassenger != NULL)
 		{
-			report = -2;
 
-			passenger_modifyPassenger(list, len, type, lenType);
+			index = passenger__askId(pArrayListPassenger);
+				if(index >= 0)
+				{
+					list = editPassenger(pArrayListPassenger, index);
+
+						if(list != NULL)
+						{
+							ll_set(pArrayListPassenger, index, list);
+						}
+				}
+
 		}
 
     return report;
@@ -119,17 +139,24 @@ int controller_editPassenger(LinkedList* pArrayListPassenger, Passenger** list, 
  * \return int
  *
  */
-//int controller_removePassenger(LinkedList* pArrayListPassenger)
-int controller_removePassenger(LinkedList* pArrayListPassenger, Passenger** list, int len,TypePassenger* type, int lenType)
+int controller_removePassenger(LinkedList* pArrayListPassenger)
 {
 	int report = -1;
+	int index;
 
-	if(pArrayListPassenger != NULL && list != NULL && len > 0 && type != NULL && lenType > 0)
-	{
-		report = -2;
+		if(pArrayListPassenger != NULL)
+		{
+			report = -2;
 
-		passenger_deletePassenger(list, len, type, lenType);
-	}
+			index = passenger__askId(pArrayListPassenger);
+
+				if(index >= 0)
+				{
+					report = 0;
+					passenger_remove(pArrayListPassenger, index);
+				}
+
+		}
 
     return report;
 }
@@ -141,16 +168,14 @@ int controller_removePassenger(LinkedList* pArrayListPassenger, Passenger** list
  * \return int
  *
  */
-//int controller_ListPassenger(LinkedList* pArrayListPassenger)
-int controller_ListPassenger(LinkedList* pArrayListPassenger, Passenger** list, int len,TypePassenger* type, int lenType)
+int controller_ListPassenger(LinkedList* pArrayListPassenger)
 {
 	int report = -1;
 
-		if(pArrayListPassenger != NULL && list != NULL && len > 0 && type != NULL && lenType > 0)
+		if(pArrayListPassenger != NULL)
 		{
-			report = -2;
-
-				passenger_printArray(list, len, type, lenType);
+			report = 0;
+			passenger_printList(pArrayListPassenger);
 		}
 
     return report;
@@ -163,16 +188,15 @@ int controller_ListPassenger(LinkedList* pArrayListPassenger, Passenger** list, 
  * \return int
  *
  */
-//int controller_sortPassenger(LinkedList* pArrayListPassenger)
-int controller_sortPassenger(LinkedList* pArrayListPassenger, Passenger** list, int len,TypePassenger* type, int lenType)
+int controller_sortPassenger(LinkedList* pArrayListPassenger)
 {
 	int report = -1;
 
-		if(pArrayListPassenger != NULL && list != NULL && len > 0 && type != NULL && lenType > 0)
+		if(pArrayListPassenger != NULL)
 		{
-			report = -2;
+			report = 0;
 
-				passenger_sortArray(list, len);
+			passenger_sortPassenger(pArrayListPassenger);
 		}
 
     return report;
@@ -185,16 +209,32 @@ int controller_sortPassenger(LinkedList* pArrayListPassenger, Passenger** list, 
  * \return int
  *
  */
-//int controller_saveAsText(char* path , LinkedList* pArrayListPassenger)
-int controller_saveAsText(char* path , LinkedList* pArrayListPassenger, Passenger** list, int len,TypePassenger* type, int lenType, int* id)
+int controller_saveAsText(char* path , LinkedList* pArrayListPassenger)
 {
 	int report = -1;
-		if(path != NULL && pArrayListPassenger != NULL && list != NULL && len > 0 && type != NULL && lenType > 0)
+	int opening;
+	int id;
+
+		if(path != NULL && pArrayListPassenger != NULL)
 		{
 			report = -2;
 
-			passenger_saveDate(list, len, type, lenType, path, &id);
+			opening = file_serachPassenger(path, pArrayListPassenger);
+			//printf("OPENING: %d\n", opening);
+				if(opening == 0)
+				{
+					report = 0;
+					file_toRewriteFile(path, pArrayListPassenger);
 
+				}
+				else
+				{
+					report = 0;
+					id = parser_searchIdMax(path, pArrayListPassenger);
+					passenger_reasingId(pArrayListPassenger, id, 2);
+					file_writeBelow(path, pArrayListPassenger);
+
+				}
 		}
 
     return report;
@@ -209,6 +249,19 @@ int controller_saveAsText(char* path , LinkedList* pArrayListPassenger, Passenge
  */
 int controller_saveAsBinary(char* path , LinkedList* pArrayListPassenger)
 {
-    return 1;
+
+	int report = -1;
+
+
+		if(path != NULL && pArrayListPassenger != NULL)
+		{
+			report = 0;
+			//Reformar la funcion que en la mima funcion buscque y compares los passenjers
+			file_writeBelowBin(path, pArrayListPassenger);
+
+
+		}
+
+    return report;
 }
 

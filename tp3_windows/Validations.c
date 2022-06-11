@@ -203,7 +203,7 @@ int getNameOrLastName(char* pResult, int len, char* message, char* messageError,
 						measureLength(buffer, &lenght);
 
 						reportLength = validateLength(buffer, len, 3);
-						reportLetters = validateOnlyLetters(buffer, lenght);
+						reportLetters = validateOnlyLettersAndSpace(buffer, lenght);
 
 						if(reportLetters == 0 && reportLength == 0)
 						{
@@ -416,7 +416,7 @@ int validateOnlyLettersAndSpace(char* chains, int len)
 			report = 0;
 			for(i=0;i<len;i++)
 			{
-				if( *(chains+i) != 32 && (chains[i] < 65 || chains[i] > 90) && (chains[i] < 97 || chains[i] > 122))
+				if( *(chains+i) != 32 && *(chains+i) != 45 && ( *(chains+i) < 65 || *(chains+i) > 90) && ( *(chains+i) < 97 || *(chains+i) > 122))
 				{
 					report = 1;
 					break;

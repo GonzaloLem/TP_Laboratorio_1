@@ -34,7 +34,7 @@ int requestOption(int min, int max)
 	int report = -1;
 	int option;
 
-		getNumberTypeInt(&option, "-Opcion: ", "Error, ingrese lo que se le pide", 1, 10,  1);
+		getNumberTypeInt(&option, "-Opcion: ", "Error, ingrese lo que se le pide", 1, 11,  1);
 
 			if(option >= min && option <= max)
 			{
@@ -43,3 +43,45 @@ int requestOption(int min, int max)
 
 	return report;
 }
+
+int menu_exit(int saveOne, int saveTwo, int exit, char* messageOne, char* errorOne, char* messageTwo, char* errorTwo)
+{
+	int report = 11;
+
+		if(saveOne >= 0 && saveTwo >= 0)
+		{
+
+			if(saveOne == 1 || saveTwo == 1)
+			{
+				report = exit;
+
+				if(saveOne == 1)
+				{
+					printf("%s\n", messageOne);
+				}
+				else
+				{
+					printf("%s\n", errorOne);
+				}
+
+				if(saveTwo == 1)
+				{
+					printf("%s\n", messageTwo);
+				}
+				else
+				{
+					printf("%s\n", errorTwo);
+				}
+
+			}
+			else
+			{
+				printf("Guarde los datos en alguno de los archivos\n");
+			}
+
+
+		}
+
+	return report;
+}
+

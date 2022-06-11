@@ -1,14 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include "LinkedList.h"
+#include "Parser.h"
+#include "Controller.h"
+#include "Passenger.h"
 #include "Menu.h"
 #include "Validations.h"
-#include "LinkedList.h"
-#include "Passenger.h"
-#include "Controller.h"
-
-#define NUMBER_PASSENGER 1000
-#define TYPE_PASSENGER 3
 
 /****************************************************
     Menu:
@@ -30,108 +27,154 @@ int main()
 {
 	setbuf(stdout, NULL);
 
-    int option;
-    int id = 0;
-    int flag;
+	int reportController_Sort;
+	int reportController_LoadTxt;
+	int reportController_LoadBin;
+	int reportController_SaveTxt;
+	int reportController_SaveBin;
+
+    int option = 0;
+    int flagHigh;
     int flagLoad = 0;
+    int flagSaveTxt = 0;
+    int flagSaveBin = 0;
 
     LinkedList* listaPasajeros = ll_newLinkedList();
-    TypePassenger types[TYPE_PASSENGER] = { {20001, "FirstClass"}, {20010, "Executive"}, {20020, "EconomyClass"} };
-    Passenger* list[NUMBER_PASSENGER];
+    do{
 
-    	passenger_initArray(list, NUMBER_PASSENGER);
+    	flagHigh = ll_len(listaPasajeros );
 
-			do{
-				flag = passenger_searchLoad(list, NUMBER_PASSENGER);
-				printMenuOptions();
-				option = requestOption(1, 10);
-					switch(option)
-					{
-						case 1:
-							controller_loadFromText("data.csv",listaPasajeros,list, NUMBER_PASSENGER, types, TYPE_PASSENGER, &id, &flagLoad);
-						break;
+		printMenuOptions();
+		option = requestOption(1, 11);
 
-						case 2:
+        switch(option)
+        {
+            case 1:
+            	if(flagLoad == 0)
+            	{
+            		reportController_LoadTxt = controller_loadFromText("data.csv",listaPasajeros);
 
-						break;
+            			if(reportController_LoadTxt == 0)
+            			{
+            				printf("Los datos fueron cargados correctamente\n");
+            				flagLoad = 1;
+            			}
+            	}
+            	else
+            	{
+            		printf("Los datos ya estan cargados en el sistema\n");
+            	}
 
-						case 3:
-							controller_addPassenger(listaPasajeros, list, NUMBER_PASSENGER, types, TYPE_PASSENGER, &id);
-						break;
+            break;
 
-						case 4:
-							if(flag == 0)
-							{
-								controller_editPassenger(listaPasajeros, list, NUMBER_PASSENGER,types, TYPE_PASSENGER);
-							}
-							else
-							{
-								printf("No hay datos cargados\n");
-							}
-						break;
+            case 2:
+            	if(flagLoad == 0)
+            	{
+            		reportController_LoadBin = controller_loadFromBinary("dataBin",listaPasajeros);
 
-						case 5:
-							if(flag == 0)
-							{
-								 controller_removePassenger(listaPasajeros, list, NUMBER_PASSENGER,types, TYPE_PASSENGER);
-							}
-							else
-							{
-								printf("No hay datos cargados\n");
-							}
-						break;
+            			if(reportController_LoadBin == 0)
+            			{
+            				printf("Los datos fueron cargados correctamente\n");
+            				flagLoad = 1;
+            			}
+            	}
+            	else
+            	{
+            		printf("Los datos ya estan cargados en el sistema\n");
+            	}
+            break;
 
-						case 6:
-							if(flag == 0)
-							{
-								controller_ListPassenger(listaPasajeros,list, NUMBER_PASSENGER,types, TYPE_PASSENGER);
-							}
-							else
-							{
-								printf("No hay datos cargados\n");
-							}
-						break;
+            case 3:
+            	controller_addPassenger(listaPasajeros);
+            break;
 
-						case 7:
-							if(flag == 0)
-							{
-								controller_sortPassenger(listaPasajeros,list, NUMBER_PASSENGER,types, TYPE_PASSENGER);
-							}
-							else
-							{
-								printf("No hay datos cargados\n");
-							}
-						break;
+            case 4:
+            	if(flagHigh > 0)
+            	{
+            		controller_editPassenger(listaPasajeros);
+            	}
+            	else
+            	{
+            		printf("No hay pasajeros para modificar\n");
+            	}
+            break;
 
-						case 8:
-							if(flag == 0)
-							{
-								controller_saveAsText("data.csv" , listaPasajeros, list, NUMBER_PASSENGER,types, TYPE_PASSENGER, &id);
-							}
-							else
-							{
-								printf("No hay datos cargados\n");
-							}
-						break;
+            case 5:
+            	if(flagHigh > 0)
+            	{
+            		controller_removePassenger(listaPasajeros);
+            	}
+            	else
+            	{
+            		printf("No hay pasajeros para eliminar\n");
+            	}
+            break;
 
-						case 9:
-							if(flag == 0)
-							{
+            case 6:
+            	if(flagHigh > 0)
+            	{
+            		controller_ListPassenger(listaPasajeros);
+            	}
+            	else
+            	{
+            		printf("No hay pasajeros para listar\n");
+            	}
+            break;
 
-							}
-							else
-							{
-								printf("No hay datos cargados\n");
-							}
-						break;
-					}
+            case 7:
+            	if(flagHigh > 0)
+            	{
+            		reportController_Sort = controller_sortPassenger(listaPasajeros);
 
-			}while(option != 10);
+            			if(reportController_Sort == 0)
+            			{
+            				printf("Pasajeros ordenados correctamente\n");
+            			}
+            	}
+            	else
+            	{
+            		printf("No hay pasajeros para ordenar\n");
+            	}
+            break;
 
+            case 8:
+            	if(flagHigh > 0)
+            	{
+            		reportController_SaveTxt = controller_saveAsText("data.csv",listaPasajeros);
+
+            			if(reportController_SaveTxt == 0)
+            			{
+            				flagSaveTxt = 1;
+            			}
+            	}
+            	else
+            	{
+            		printf("No hay pasajeros para guardar\n");
+            	}
+            break;
+
+            case 9:
+            	if(flagHigh > 0)
+            	{
+            		reportController_SaveBin = controller_saveAsBinary("dataBin" , listaPasajeros);
+
+            			if(reportController_SaveBin == 0)
+            			{
+            				flagSaveBin = 1;
+            			}
+            	}
+            	else
+            	{
+            		printf("No hay pasajeros para guardar\n");
+            	}
+            break;
+
+            case 10:
+            	option = menu_exit(flagSaveTxt, flagSaveBin, 10, "Se guardo en modo texto", "No fue guardado en modo texto", "Se guardo en modo binario", "No se guardo en modo binario");
+
+            break;
+        }
+    }while(option != 10);
     return 0;
 }
 
-
-/*
-
- * */

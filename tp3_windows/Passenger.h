@@ -24,8 +24,9 @@ typedef struct
 	char codigoVuelo[FLYCODE];
 	char estadoDelVuelo[STATUS_FLIGHT];
 
-
 }Passenger;
+
+typedef int (pFunc)(void* ,void*);
 
 Passenger* Passenger_new();
 Passenger* Passenger_newParametros(int id,char* nombre, char* apellido,float precio,int tipoPasajero, char* codigoVuelo, char* estadoDelVuelo);
@@ -60,37 +61,25 @@ int Passenger_setPrecioTxt(Passenger* this,char* precio);
 int Passenger_getPrecio(Passenger* this,float* precio);
 int Passenger_getPrecioTxt(Passenger* this,char* precio);
 
-int typePassenger_getId(TypePassenger* this, int* id);
-int typePassenger_getType(TypePassenger* this, char* type);
+int passenger_assignId(LinkedList* pArrayListPassenger);
+Passenger* addPassenger(LinkedList* pArrayListPassenger);//389 mirar //527 mirar
 
-int passenger_initArray(Passenger** list, int len);
-int passenger_searchLoad(Passenger** list, int len);
-int passenger_searchFree(Passenger** list, int len);
-int passenger_searchId(Passenger** list, int len, int id);
-int typePassenger_searchType(TypePassenger* type, int len, char* passengerType, int* idType);
+int passenger_searchId(LinkedList* pArrayListPassenger,int id);
+int passenger__askId(LinkedList* pArrayListPassenger);
+Passenger* editPassenger(LinkedList* pArrayListPassenger, int index);
+int passenger_remove(LinkedList* pArrayListPassenger, int index);
+int passenger_printList(LinkedList* pArrayListPassenger);
+int passenger_sortPassenger(LinkedList* pArrayListPassenger);
 
 int searchIdType(TypePassenger* type, int len, int idPassenger, char* typeTxt);
-int passenger_printArray(Passenger** list, int len,TypePassenger* type, int lenType);
-
-int passenger_reasingId(Passenger** list, int len, int* id);
-int passenger_loadDate(Passenger** list, int len, TypePassenger* type, int lenType, char* path,int** id);//
-
 int printTypePassenger(TypePassenger* type, int len);
 int assignIdTypePassenger(TypePassenger* type, int len, int option, int* id);
-int addPassenger(Passenger** list, int len, TypePassenger* type, int lenType, int** id);
+int typePassenger_searchType(TypePassenger* type, int len, char* passengerType, int* idType);
 
-int passenger_modifyPassenger(Passenger** list, int len,TypePassenger* type, int lenType);
+int passenger_sortName(Passenger* listOne, Passenger*listTwo);
+int passenger_sort(void*, void*);
 
-int passenger_delete(Passenger* this);
-int borrarIndexArray(Passenger** list, int index);
-int passenger_deletePassenger(Passenger** list, int len, TypePassenger* type, int lenType);
+int passenger_reasingId(LinkedList* pArrayListPassenger, int id, int option);
 
-int sortName_lastName(Passenger** list, int len);
-int passenger_sortArray(Passenger** list, int len);
-
-int passenger_checkList(Passenger** list, int len, char* path);
-int archive_countAmount(char* path, int* id);
-int archive_rewrite(Passenger** list, int len, TypePassenger* type, int lenType, char* path);
-int passenger_saveDate(Passenger** list, int len, TypePassenger* type, int lenType, char* path, int** id);
 
 #endif /* PASSENGER_H_ */
