@@ -7,6 +7,8 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="D:\Facultad\Programación\1er Cuatrimestre\Programacion y Laboratorio I\TP_Laboratoro_1\likedList"/>
+			<item value="D:\Facultad\Programación\1er Cuatrimestre\Programacion y Laboratorio I\TP_Laboratoro_1\tp4_windows"/>
 			<item value="D:\Facultad\Programación\1er Cuatrimestre\Programacion y Laboratorio I\TP_Laboratoro_1\tp3_windows"/>
 			<item value="D:\Facultad\Programación\1er Cuatrimestre\Programacion y Laboratorio I\TP_Laboratoro_1\TP_1"/>
 		</list>

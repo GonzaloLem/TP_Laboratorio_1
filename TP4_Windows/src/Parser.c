@@ -14,15 +14,17 @@
  */
 int parser_PassengerFromText(FILE* pFile , LinkedList* pArrayListPassenger)
 {
+	LinkedList* listClone = ll_newLinkedList();
 	Passenger* list;
 	TypePassenger type[TAM_TYPE] = { {20001, "FirstClass"}, {20010, "Executive"}, {20020, "EconomyClass"} };
 	Passenger* aux;
 
-
 	int report = -1;
 
 	char buffer[7][30];
+	int i;
 
+	int id = 0;
 	int idType;
 	char idTxt[LIMIT_BUFFER];
 	char name[LIMIT_BUFFER];
@@ -32,37 +34,45 @@ int parser_PassengerFromText(FILE* pFile , LinkedList* pArrayListPassenger)
 	char flyCode[LIMIT_BUFFER];
 	char statusFlight[LIMIT_BUFFER];
 
-	//int contador = 0;
-
-		if(pFile != NULL && pArrayListPassenger != NULL)
+		if(listClone != NULL && pFile != NULL && pArrayListPassenger != NULL)
 		{
-		//fprintf(pFile,"id,name,lastname,price,flycode,typePassenger,statusFlight\n");
+			report = 0;
+
 			fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]\n", buffer[0], buffer[1], buffer[2], buffer[3], buffer[4], buffer[5], buffer[6]);
+			do{
+				if(fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]\n", idTxt, name, lastName, priceTxt, flyCode, typePassengerTxt, statusFlight) == 7)
+				{
+					typePassenger_searchType(type, TAM_TYPE, typePassengerTxt, &idType);
+					sprintf(typePassengerTxt, "%d", idType);
 
-					do{
-						//id,name,lastname,price,flycode,typePassenger,statusFlight
-						if(fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]\n", idTxt, name, lastName, priceTxt, flyCode, typePassengerTxt, statusFlight) == 7)
+					aux = Passenger_newParametrosTxt(idTxt, name, lastName, priceTxt, typePassengerTxt, flyCode, statusFlight);
+
+						if(aux != NULL)
 						{
-							//fprintf(pFile,"%d,%s,%s,%.2f,%s,%s,%s\n", id, name, lastName, price, flyCodee, typePassengerTxt, statusFlightt);
-							//printf("%s - %s - %s - %s - %s - %s - %s\n", idTxt, name, lastName, priceTxt, flyCode, typePassengerTxt, statusFlight);
+							report = 0;
+							list = aux;
+							ll_add(listClone, list);
 
-							typePassenger_searchType(type, TAM_TYPE, typePassengerTxt, &idType);
-							sprintf(typePassengerTxt, "%d", idType);
-							aux = Passenger_newParametrosTxt(idTxt, name, lastName, priceTxt, typePassengerTxt, flyCode, statusFlight);
-
-								//printf("ID: %d - NOMBRE: %s\n", aux->id,aux->nombre);
-
-								if(aux != NULL)
+								if(atoi(idTxt) > id)
 								{
-									report = 0;
-									list = aux;
-
-									passenger_reasingId(pArrayListPassenger, atoi(idTxt), 1);
-
-									ll_add(pArrayListPassenger, list);
+									id = atoi(idTxt);
 								}
 						}
-					}while( !feof(pFile) );
+				}
+
+			}while( !feof(pFile) );
+
+			passenger_reasingId(pArrayListPassenger, id, 2);
+
+				for(i=0;i<ll_len(listClone);i++)
+				{
+					list = ll_get(listClone, i);
+
+						if(list != NULL)
+						{
+							ll_add(pArrayListPassenger, list);
+						}
+				}
 
 		}
 
@@ -106,12 +116,16 @@ int parser_searchIdMax(char* path,LinkedList* pArrayListPassenger)
 
 int file_serachPassenger(char* path, LinkedList* pArrayListPassenger)
 {
+	LinkedList* listClone = ll_newLinkedList();
 	FILE* pFile;
-	Passenger* list;
+	Passenger* listOne;
+	Passenger* listTwo;
+	Passenger* aux;
 
 	int report = -1;
 
 	int i;
+	int j;
 	int len;
 	char lecFant[7][50];
 
@@ -123,16 +137,7 @@ int file_serachPassenger(char* path, LinkedList* pArrayListPassenger)
 	char flyCode[100];
 	char statusFlight[100];
 
-	char code[100];
-	char nam[100];
-	char last[100];
-
-	int compName;
-	int compLastName;
-	int compCode;
-	int flag = 0;
-
-		if(path != NULL && pArrayListPassenger != NULL)
+		if(listClone != NULL && path != NULL && pArrayListPassenger != NULL)
 		{
 			report = 1;
 			pFile = fopen(path, "r");
@@ -143,34 +148,54 @@ int file_serachPassenger(char* path, LinkedList* pArrayListPassenger)
 					do{
 						if(fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]\n", idTxt, name, lastName, priceTxt, flyCode, typePassengerTxt,statusFlight) == 7)
 						{
-							for(i=0;i<len;i++)
-							{
-								list = ll_get(pArrayListPassenger, i);
 
-								Passenger_getCodigoVuelo(list, code);
-								Passenger_getNombre(list, nam);
-								Passenger_getApellido(list, last);
+							aux = Passenger_newParametrosTxt(idTxt, name, lastName, priceTxt, typePassengerTxt, flyCode, statusFlight);
 
-								compCode = strcmp(flyCode, code);
-								compName = strcmp(name, nam);
-								compLastName = strcmp(lastName, last);
+								if(aux != NULL)
+								{
+									report = 0;
+									listOne = aux;
+									ll_add(listClone, listOne);
 
-									if(compCode == 0 && compName == 0 && compLastName == 0)
-									{
-										flag = 1;
-										break;
-									}
-							}
+								}
 						}
 
-						if(flag == 1)
-						{
-							report = 0;
-							break;
-						}
 					}while( !feof(pFile) );
-
 					fclose(pFile);
+
+					for(i=0;i<len;i++)
+					{
+						listOne = ll_get(pArrayListPassenger, i);
+
+						for(j=0;j<ll_len(listClone);j++)
+						{
+							listTwo = ll_get(listClone, j);
+
+
+						/*	Passenger_getCodigoVuelo(listTwo, code);
+							Passenger_getNombre(listTwo, nam);
+							Passenger_getApellido(listTwo, last);
+
+							compCode = strcmp(flyCode, code);
+							compName = strcmp(name, nam);
+							compLastName = strcmp(lastName, last);*/
+
+							/*	if(compCode == 0 && compName == 0 && compLastName == 0)
+								{
+									flag = 1;
+									break;
+								}*/
+
+							if(listOne == listTwo)
+							{
+								printf("Entro\n");
+								break;
+							}
+
+						}
+
+					}
+
 				}
 		}
 

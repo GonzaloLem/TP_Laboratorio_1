@@ -1,45 +1,61 @@
-19:33:13 **** Incremental Build of configuration Debug for project tp3_windows ****
+18:38:30 **** Rebuild of configuration Debug for project TP4_Windows ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Passenger.o "..\\Passenger.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
-gcc "-LD:\\Facultad\\Programación\\1er Cuatrimestre\\Programacion y Laboratorio I\\TP_Laboratoro_1\\tp3_windows" -o tp3_windows.exe Controller.o Menu.o Passenger.o Validations.o main.o parser.o -lLinkedList 
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-19:40:33 **** Incremental Build of configuration Debug for project tp3_windows ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP4_Windows.o" "..\\src\\TP4_Windows.c" 
+gcc -o TP4_Windows.exe "src\\TP4_Windows.o" 
+Info: Nothing to build for TP4_Windows
+19:04:32 **** Incremental Build of configuration Debug for project TP4_Windows ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-gcc "-LD:\\Facultad\\Programación\\1er Cuatrimestre\\Programacion y Laboratorio I\\TP_Laboratoro_1\\tp3_windows" -o tp3_windows.exe Controller.o Menu.o Passenger.o Validations.o main.o parser.o -lLinkedList 
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-19:41:44 **** Incremental Build of configuration Debug for project tp3_windows ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Validations.o" "..\\src\\Validations.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+..\src\Parser.c: In function 'file_serachPassenger':
+..\src\Parser.c:147:6: warning: unused variable 'flag' [-Wunused-variable]
+  int flag = 0;
+      ^~~~
+..\src\Parser.c:146:6: warning: unused variable 'compCode' [-Wunused-variable]
+  int compCode;
+      ^~~~~~~~
+..\src\Parser.c:145:6: warning: unused variable 'compLastName' [-Wunused-variable]
+  int compLastName;
+      ^~~~~~~~~~~~
+..\src\Parser.c:144:6: warning: unused variable 'compName' [-Wunused-variable]
+  int compName;
+      ^~~~~~~~
+..\src\Parser.c:142:7: warning: unused variable 'last' [-Wunused-variable]
+  char last[100];
+       ^~~~
+..\src\Parser.c:141:7: warning: unused variable 'nam' [-Wunused-variable]
+  char nam[100];
+       ^~~
+..\src\Parser.c:140:7: warning: unused variable 'code' [-Wunused-variable]
+  char code[100];
+       ^~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+..\src\Controller.c: In function 'controller_saveAsText':
+..\src\Controller.c:218:6: warning: unused variable 'id' [-Wunused-variable]
+  int id;
+      ^~
+..\src\Controller.c:217:6: warning: variable 'opening' set but not used [-Wunused-but-set-variable]
+  int opening;
+      ^~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP4_Windows.o" "..\\src\\TP4_Windows.c" 
+gcc -o TP4_Windows.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Menu.o" "src\\Parser.o" "src\\Passenger.o" "src\\TP4_Windows.o" "src\\Validations.o" 
+19:04:50 **** Incremental Build of configuration Debug for project TP4_Windows ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-gcc "-LD:\\Facultad\\Programación\\1er Cuatrimestre\\Programacion y Laboratorio I\\TP_Laboratoro_1\\tp3_windows" -o tp3_windows.exe Controller.o Menu.o Passenger.o Validations.o main.o parser.o -lLinkedList 
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-19:43:05 **** Incremental Build of configuration Debug for project tp3_windows ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+gcc -o TP4_Windows.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Menu.o" "src\\Parser.o" "src\\Passenger.o" "src\\TP4_Windows.o" "src\\Validations.o" 
+Info: Nothing to build for TP4_Windows
+Info: Nothing to build for TP4_Windows
+Info: Nothing to build for TP4_Windows
+Info: Nothing to build for TP4_Windows
+Info: Nothing to build for TP4_Windows
+Info: Nothing to build for TP4_Windows
+19:12:08 **** Incremental Build of configuration Debug for project TP4_Windows ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-gcc "-LD:\\Facultad\\Programación\\1er Cuatrimestre\\Programacion y Laboratorio I\\TP_Laboratoro_1\\tp3_windows" -o tp3_windows.exe Controller.o Menu.o Passenger.o Validations.o main.o parser.o -lLinkedList 
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o TP4_Windows.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Menu.o" "src\\Parser.o" "src\\Passenger.o" "src\\TP4_Windows.o" "src\\Validations.o" 
+Info: Nothing to build for TP4_Windows
+Info: Nothing to build for TP4_Windows
+Info: Nothing to build for TP4_Windows
