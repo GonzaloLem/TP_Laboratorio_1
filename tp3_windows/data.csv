@@ -1001,5 +1001,4 @@ id,name,lastname,price,flycode,typePassenger,statusFlight
 1000,Saleem,Torres,20000.00,MM0987B,EconomyClass,En Horario
 1001,Gonzalo,Leminia,123123.33,GL11BE,FirstClass,Activo
 1002,Valeria,Vazquez,1233.33,VV1,FirstClass,Activo
-1003,Santino,Gilardi,123123.33,SG11,Executive,En Horarior
 1004,Paola,Vazquez,8424.33,PV55,FirstClass,Inactivo

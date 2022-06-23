@@ -52,7 +52,7 @@ int main()
             case 1:
             	if(flagLoad == 0)
             	{
-            		reportController_LoadTxt = controller_loadFromText("data.csv",listaPasajeros);
+                		reportController_LoadTxt = controller_loadFromText("data.csv",listaPasajeros);
 
             			if(reportController_LoadTxt == 0)
             			{

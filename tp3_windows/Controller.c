@@ -28,6 +28,15 @@ int controller_loadFromText(char* path , LinkedList* pArrayListPassenger)
 				{
 					report = 0;
 					parser_PassengerFromText(pFile ,pArrayListPassenger);
+
+
+
+					/*for(int i=0;i<ll_len(copyPassenger);i++)
+					{
+						ll_add(pArrayListPassenger, ll_get(copyPassenger, i));
+					}*/
+
+
 				}
 			fclose(pFile);
 

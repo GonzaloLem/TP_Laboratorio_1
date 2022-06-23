@@ -915,7 +915,6 @@ int passenger_reasingId(LinkedList* pArrayListPassenger, int id, int option)
 						id++;
 						for(j=i;j<len;j++)
 						{
-
 							Passenger_setId(list, id);
 							ll_set(pArrayListPassenger, i, list);
 						}
