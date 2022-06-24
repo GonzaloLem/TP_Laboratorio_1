@@ -12,51 +12,34 @@ struct
 	char lastName[51];
 	float price;
 	char flycode[10];
-	int isEmpty;
-
 	int typePassenger;
 	int statusFlight;
 
+	int isEmpty;
 
 }typedef Passenger;
 
-struct{
-
-	int idTypePassenger;
-	char description[51];
-
-}typedef eTypePassenger;
-
-struct{
-
-	int idStatusFlight;
-	char description[51];
-
-}typedef eStatusFlight;
-
-
-int printTypePassenger(eTypePassenger* listType, int len);
-int printStatusflight(eStatusFlight* listStatus, int len);
 
 int initPassengers(Passenger* list, int len);
 int searchHousingLoaded(Passenger* list, int len);
 
 int searchFree(Passenger* list, int len, int* free);
 int modifyIsEmpty(Passenger* list, int position, int valor);
-int addPassenger(Passenger* list, int len, int id, char name[],char lastName[],float price,int typePassenger, char flycode[], int statusFlight);
 
-int askForInformation(Passenger* list, int len, eTypePassenger* listType, int lenType, eStatusFlight* listStatus, int lenStatus, int* counterId);
+int addPassenger(Passenger* list, int len, int id, char name[],char lastName[],float price,int typePassenger, char flycode[], int statusFlight);
+int askForInformation(Passenger* list, int len,int* counterId);
+
+int requestid(Passenger* list, int len);
+int modifiPassenger(Passenger* list, int len);
 
 int findPassengerById(Passenger* list, int len, int id);
-int requestid(Passenger* list, int len, eTypePassenger* listType, int lenType, eStatusFlight* listStatus, int lenStatus);
-int modifyPassengerData(Passenger* list, int position, eTypePassenger* listType, int lenType, eStatusFlight* listStatus, int lenStatus, int option);
 
-int returnId(Passenger* list, int position);
 int removePassenger(Passenger* list, int len, int id);
+int passenger_removePassenger(Passenger* list, int len);
 
-int searchTypePassenger(Passenger* list, int len, eTypePassenger* listType, int lenType, int* position);
-int searchStatusFlight(Passenger* list, int len, eStatusFlight* listStatus, int lenTStatus, int* position);
-int printPassenger(Passenger* list, int len, eTypePassenger* listType, int lenType, eStatusFlight* listStatus, int lenStatus);
+int searchTypePassenger(int typePassenger, char* type);
+int searchStatusFlight(int statusFlight, char* status);
+int printPassenger(Passenger* list, int len);
 
 int sortPassengers(Passenger* list, int len, int order);
 int sortPassengersByCode(Passenger* list, int len, int order);
@@ -64,6 +47,10 @@ int sortPassengersByCode(Passenger* list, int len, int order);
 int getTotalAverage(Passenger* list, int len, float* total, float* average);
 int getHowManyExceedAverage(Passenger* list, int len, float average, int* counter);
 
-int forcedLoad(Passenger* list, int len, int* counterId);
+int passenger_calculateTotalAverage(Passenger* list, int len);
+
+int passenger_report(Passenger* list, int len);
+
+int forcedLoad(Passenger* list, int len, char* name, char* lastName, float price, char* flycode, int typePassenger, int statusFlight, int* counterId);
 
 #endif /* ARRAYPASSENGER_H_ */

@@ -379,7 +379,7 @@ int getNumberTypeInt(int* number, char* message, char* messageError, int min, in
 
 					NumConverted = atoi(buffer);
 
-						if(reportNumber == 0 && NumConverted > min && NumConverted < max)
+						if(reportNumber == 0 && NumConverted >= min && NumConverted <= max)
 						{
 							report = 0;
 							*number = NumConverted;
@@ -423,44 +423,4 @@ int assignId(int** counterId, int* id)
 	return report;
 }
 
-/**
- * @brief print message the type float
- *
- * @param num float
- * @param message char pointer
- * @return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
- */
-int printTypefloat(float num, char* message)
-{
-	int report = -1;
 
-		if(num >= 0 && message != NULL)
-		{
-			report = 0;
-
-			printf("%s%.2f", message, num);
-		}
-
-	return report;
-}
-
-/**
- * @brief print message the type int
- *
- * @param num int
- * @param message char pointer
- * @return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
- */
-int printTypeInt(int num, char* message)
-{
-	int report = -1;
-
-		if(num >= 0 && message != NULL)
-		{
-			report = 0;
-
-			printf("%s%d", message, num);
-		}
-
-	return report;
-}

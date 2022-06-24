@@ -7,35 +7,26 @@
 #include "Validation.h"
 
 #define LIMIT 2000
-#define LIMIT_TYPE 3
-#define LIMIT_STATUS 2
-
-#define LIMIT_NAME 51
-#define LIMIT_LASTNAME 51
-#define LIMIT_CODE 10
 
 int main(void) {
 
 	setbuf(stdout, NULL);
 
 	Passenger list[LIMIT];
-	eTypePassenger listType[LIMIT_TYPE] = { {1000, "Niño"}, {1010, "Adulto"}, {1020, "Anciano"} };
-	eStatusFlight listStatus[LIMIT_STATUS] = { {3000, "Activo"}, {3100, "Inactivo"} };
 
 	int option;
-	int optionSecond;
-	int optionThird;
 	int counterId = 0;
-	int id;
-	int position;
-	int positionLow;
 
 	int flag;
-	float total;
-	float average;
-	int counterAverage;
 
 		initPassengers(list, LIMIT);
+
+/*		forcedLoad(list, LIMIT, "Gonzalo", "Leminia", 10000, "GL11", 2, 1, &counterId); //Pasajeros para cargar forzosamente
+		forcedLoad(list, LIMIT, "Martina", "Leminia", 13000, "ML22", 1, 1, &counterId);
+		forcedLoad(list, LIMIT, "Valeria", "Vazquez", 20000, "VV21", 3, 2, &counterId);
+		forcedLoad(list, LIMIT, "Leonardo", "Gilardi", 6000, "LG66", 2, 1, &counterId);
+		forcedLoad(list, LIMIT, "Jesica", "Gonzalez", 9000, "JGD2", 2, 2, &counterId);
+		forcedLoad(list, LIMIT, "Graciela", "Dalto", 16000, "GL11", 3, 2, &counterId);*/
 
 		do{
 			flag = searchHousingLoaded(list, LIMIT);
@@ -46,115 +37,45 @@ int main(void) {
 				switch(option)
 				{
 					case 1:
-						askForInformation(list, LIMIT, listType, LIMIT_TYPE,  listStatus, LIMIT_STATUS, &counterId);
+						askForInformation(list, LIMIT, &counterId);
 					break;
 
 					case 2:
 						if(flag == 0)
 						{
-							position = requestid(list, LIMIT, listType, LIMIT_TYPE,  listStatus, LIMIT_STATUS);
-
-								if(position != -1 && position != -2)
-								{
-											do{
-												printMenuSecond();
-												saveOption(&optionSecond);
-
-													switch(optionSecond)
-													{
-														case 1:
-															modifyPassengerData(list, position, listType, LIMIT_TYPE, listStatus, LIMIT_STATUS, 1);
-														break;
-
-														case 2:
-															modifyPassengerData(list, position, listType, LIMIT_TYPE, listStatus, LIMIT_STATUS, 2);
-														break;
-
-														case 3:
-															modifyPassengerData(list, position, listType, LIMIT_TYPE, listStatus, LIMIT_STATUS, 3);
-														break;
-
-														case 4:
-															modifyPassengerData(list, position, listType, LIMIT_TYPE, listStatus, LIMIT_STATUS, 4);
-														break;
-
-														case 5:
-															modifyPassengerData(list, position, listType, LIMIT_TYPE, listStatus, LIMIT_STATUS, 5);
-														break;
-
-														case 6:
-															modifyPassengerData(list, position, listType, LIMIT_TYPE, listStatus, LIMIT_STATUS, 6);
-														break;
-
-													}
-
-											}while(optionSecond != 7);
-								}
+							modifiPassenger(list, LIMIT);
+						}
+						else
+						{
+							printf("No hay pasajeros para modficar\n");
 						}
 					break;
 
 					case 3:
 						if(flag == 0)
 						{
-
-							positionLow = requestid(list, LIMIT, listType, LIMIT_TYPE,  listStatus, LIMIT_STATUS);
-										if(positionLow != -1 && positionLow != -2)
-										{
-											id = returnId(list, positionLow);
-											removePassenger(list, LIMIT, id);
-										}
+							passenger_removePassenger(list, LIMIT);
 						}
-
+						else
+						{
+							printf("No hay pasajeros para eliminar\n");
+						}
 					break;
 
 					case 4:
 						if(flag == 0)
 						{
-							do{
-								printMenuThird();
-								saveOption(&optionThird);
-
-									switch(optionThird)
-									{
-										case 1:
-											sortPassengers(list, LIMIT, 0);
-											printPassenger(list, LIMIT, listType, LIMIT_TYPE, listStatus, LIMIT_STATUS);
-
-										break;
-
-										case 2:
-											getTotalAverage(list, LIMIT, &total, &average);
-											getHowManyExceedAverage(list, LIMIT, average, &counterAverage);
-
-											printTypefloat(total, "\nEl precio total es: ");
-											printTypefloat(average, "\nEl promedio de los precios es de: ");
-											printTypeInt(counterAverage, "\nLa cantidad de personas que superan el promedio son: ");
-
-										break;
-
-										case 3:
-											sortPassengersByCode(list, LIMIT, 0);
-											printPassenger(list, LIMIT, listType, LIMIT_TYPE, listStatus, LIMIT_STATUS);
-										break;
-									}
-
-							}while(optionThird != 4);
+							passenger_report(list, LIMIT);
 						}
-
-
+						else
+						{
+							printf("No hay pasajeros para informar\n");
+						}
 					break;
 
-					case 5:
-						//reportForced = forcedLoad(list, LIMIT, &counterId);
-					break;
-
-					case 6:
-						printf("Cerrando Programa\n");
-						system("PAUSE");
-					break;
 				}
 
-		}while(option != 6);
+		}while(option != 5);
 
 	return EXIT_SUCCESS;
 }

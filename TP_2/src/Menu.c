@@ -15,8 +15,7 @@ void printMenu()
 			"2.Modificar\n"
 			"3.Baja\n"
 			"4.Informar\n"
-			"5.Carga Forzada\n"
-			"6.Salir\n"
+			"5.Salir\n"
 			"-Opcion: ");
 }
 
@@ -29,10 +28,11 @@ void printMenuSecond()
 	printf("\n1.Modificar Nombre\n"
 			"2.Modificar Apellido\n"
 			"3.Modificar Precio\n"
-			"4.Modificar Tipo de Pasajero\n"
-			"5. Modificar Codigo\n"
-			"6. Modificar estado del vuelo\n."
-			"7.Regresar\n");
+			"4.Modificar Codigo\n"
+			"5.Modificar Tipo de Pasajero\n"
+			"6.Modificar estado del vuelo\n"
+			"7.Regresar\n"
+			"-Opcion: ");
 }
 
 /**

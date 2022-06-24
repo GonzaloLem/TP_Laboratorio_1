@@ -1,10 +1,1 @@
-18:29:29 **** Rebuild of configuration Debug for project TP_2 ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
-gcc -o TP_2.exe "src\\ArrayPassenger.o" "src\\Menu.o" "src\\TP_2.o" "src\\validation.o" 
-
-18:29:31 Build Finished. 0 errors, 0 warnings. (took 2s.287ms)
-
+Info: Nothing to build for TP_2

@@ -2,64 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "ArrayPassenger.h"
 #include "Menu.h"
 #include "Validation.h"
+#include "ArrayPassenger.h"
 
 #define LIMIT_NAME 51
 #define LIMIT_LASTNAME 51
 #define LIMIT_CODE 10
-
-/**
- * @brief print list the eTypePassenger
- *
- * @param listType eTypePassenger* Pointer to array of passenger
- * @param len int Array length
- * @return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
- */
-int printTypePassenger(eTypePassenger* listType, int len)
-{
-	int report = -1;
-	int i;
-
-		if(listType != NULL && len > 0)
-		{
-			report = 0;
-
-				for(i=0;i<len;i++)
-				{
-					printf("\nID[%d] - %s", listType[i].idTypePassenger, listType[i].description);
-				}
-		}
-
-	return report;
-}
-
-
-/**
- * @brief print list type eStatusFlight
- *
- * @param listStatus eStatusFlight* Pointer to array of passenger
- * @param len int Array length
- * @return	int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
- */
-int printStatusflight(eStatusFlight* listStatus, int len)
-{
-	int report = -1;
-	int i;
-
-		if(listStatus != NULL && len > 0)
-		{
-			report = 0;
-
-				for(i=0;i<len;i++)
-				{
-					printf("\nID[%d] - %s", listStatus[i].idStatusFlight, listStatus[i].description);
-				}
-		}
-
-	return report;
-}
 
 /** \brief To indicate that all position in the array are empty,
 * this function put the flag (isEmpty) in TRUE in all
@@ -196,7 +145,7 @@ int addPassenger(Passenger* list, int len, int id, char name[],char lastName[],f
 	int free;
 
 
-		if(list != NULL)
+		if(list != NULL && len > 0 && id > 0 && name != NULL && lastName != NULL && price >= 0 && typePassenger > 0 && flycode != NULL && statusFlight > 0)
 		{
 			reportFree = searchFree(list, len, &free);
 
@@ -235,10 +184,10 @@ int addPassenger(Passenger* list, int len, int id, char name[],char lastName[],f
  *
  *
  */
-int askForInformation(Passenger* list, int len, eTypePassenger* listType, int lenType, eStatusFlight* listStatus, int lenStatus, int* counterId)
+int askForInformation(Passenger* list, int len, int* counterId)
 {
 	int report = -1;
-	int id;
+	int reportAddPassenger;
 	char name[LIMIT_NAME];
 	char lastName[LIMIT_LASTNAME];
 	float price;
@@ -262,23 +211,158 @@ int askForInformation(Passenger* list, int len, eTypePassenger* listType, int le
 			reportPrice = getNumberTypeFloat(&price, "Ingrese precio: ", "Error. Introdusca bien el precio\n", 1, 1000000, 3);
 			reportCode = getNumberAlphanumeric(code, LIMIT_CODE, "Ingrese codigo de vuelo: ", "Error. Solo se permiten letras y numeros\n", 3);
 
-			printTypePassenger(listType, lenType);
-			reportType = getNumberTypeInt(&typePassenger, "\nIngrese el tipo de pasajero: ", "Error. Ingrese bien el tipo de pasajero\n", 999, 1100, 3);
+			reportType = getNumberTypeInt(&typePassenger, "Ingrese el tipo de pasajero\n1)Ninio\n2)Adulto\n3)Anciano\n-Opcion: ", "Error. Ingrese bien el tipo de pasajero\n", 1, 3, 3);
 
-			printStatusflight(listStatus, lenStatus);
-			reportStatus = getNumberTypeInt(&statusFlight, "\nIngrese el estado del vuelo: ", "Error. Ingrese bien el estado del vuelo\n", 2999, 3101, 3);
+			reportStatus = getNumberTypeInt(&statusFlight, "Ingrese el estado del vuelo\n1)Activo\n2)Inactivo\n-Opcion: ", "Error. Ingrese bien el estado del vuelo\n", 1, 2, 3);
 
 				if(reportName == 0 && reportLastName == 0 && reportPrice == 0 && reportCode == 0 && reportType == 0 && reportStatus == 0)
 				{
 					report = 0;
-					assignId(&counterId, &id);
-					addPassenger(list, len, id, name, lastName, price, typePassenger, code, statusFlight);
+					//assignId(&counterId, &id);
+					(*counterId)++;
+					reportAddPassenger = addPassenger(list, len, (*counterId), name, lastName, price, typePassenger, code, statusFlight);
+
+						if(reportAddPassenger != 0)
+						{
+							(*counterId)--;
+						}
 				}
 
 		}
 
 	return report;
 }
+
+/**
+ * @brief it asks the user for the id and if it finds it, it enters an options menu to modify the passenger
+ *
+ * @param list Passenger* Pointer to array of passenger
+ * @param len int
+ * @return return (-1) [Invalid length or NULL pointer]] - return (0) allOk
+ */
+int modifiPassenger(Passenger* list, int len)
+{
+	Passenger aux;
+
+	int report = -1;
+	int index;
+
+	int optionMenu;
+
+	int reportName;
+	int reportLastName;
+	int reportPrice;
+	int reportCode;
+	int reportType;
+	int reportStatus;
+
+		if(list != NULL && len > 0)
+		{
+			printPassenger(list, len);
+			index = requestid(list, len);
+
+			if(index >= 0)
+			{
+				report = 0;
+				do{
+					printMenuSecond();
+					saveOption(&optionMenu);
+
+						switch(optionMenu)
+						{
+							case 1:
+								reportName = getNameOrLastName(aux.name, LIMIT_NAME, "Nombre del pasajero: ", "Error. Introdusca bien el nombre\n", 3);
+
+									if(reportName == 0)
+									{
+										strcpy(list[index].name, aux.name);
+									}
+							break;
+
+							case 2:
+								reportLastName = getNameOrLastName(aux.lastName, LIMIT_LASTNAME, "Apellido del pasajero: ", "Error. Introdusca bien el apellido\n", 3);
+
+									if(reportLastName == 0)
+									{
+										strcpy(list[index].lastName, aux.lastName);
+									}
+							break;
+
+							case 3:
+								reportPrice = getNumberTypeFloat(&aux.price, "Ingrese precio: ", "Error. Introdusca bien el precio\n", 1, 1000000, 3);
+
+									if(reportPrice == 0)
+									{
+										list[index].price = aux.price;
+									}
+							break;
+
+							case 4:
+								reportCode = getNumberAlphanumeric(aux.flycode, LIMIT_CODE, "Ingrese codigo de vuelo: ", "Error. Solo se permiten letras y numeros\n", 3);
+									if(reportCode == 0)
+									{
+										strcpy(list[index].flycode, aux.flycode);
+									}
+							break;
+
+							case 5:
+								reportType = getNumberTypeInt(&aux.typePassenger, "Ingrese el tipo de pasajero\n1)Ninio\n2)Adulto\n3)Anciano\n-Opcion: ", "Error. Ingrese bien el tipo de pasajero\n", 1, 3, 3);
+									if(reportType == 0)
+									{
+										list[index].typePassenger = aux.typePassenger;
+									}
+							break;
+
+							case 6:
+								reportStatus = getNumberTypeInt(&aux.statusFlight, "Ingrese el estado del vuelo\n1)Activo\n2)Inactivo\n-Opcion: ", "Error. Ingrese bien el estado del vuelo\n", 1, 2, 3);
+									if(reportStatus == 0)
+									{
+										list[index].statusFlight = aux.statusFlight;
+									}
+							break;
+
+						}
+
+				}while(optionMenu != 7);
+			}
+
+		}
+
+	return report;
+}
+
+/**
+ * @brief asks for the passenger id to delete
+ *
+ * @param list Passenger* Pointer to array of passenger
+ * @param len int len
+ * @return return (-1) [Invalid length or NULL pointer] - return (1) [you do not enter what is requested] - return (0) allOk
+ */
+int passenger_removePassenger(Passenger* list, int len)
+{
+	int report = -1;
+	int reportAskId;
+
+	int id;
+
+		if(list != NULL && len > 0)
+		{
+			report = 1;
+
+			printPassenger(list, len);
+			reportAskId = getNumberTypeInt(&id, "Ingrese el ID del pasajero: ", "Error. Ingrese una ID valida\n", 1, 10000,  2);
+
+				if(reportAskId == 0)
+				{
+					report = 0;
+					removePassenger(list, len, id);
+				}
+		}
+
+	return report;
+}
+
+
 /** \brief find a Passenger by Id en returns the index position in array.
 *
 * \param list Passenger* Pointer to array of passenger
@@ -323,25 +407,22 @@ int findPassengerById(Passenger* list, int len, int id)
  * @return Return passenger index position or (-1) if [Invalid length or NULL pointer received or passenger not found]- if (-2) [the id was not found] - if (return the position) OK
  *
  */
-int requestid(Passenger* list, int len, eTypePassenger* listType, int lenType, eStatusFlight* listStatus, int lenStatus)
+int requestid(Passenger* list, int len)
 {
 	int report = -1;
 	int id;
-	int reportId;
 	int reportValidateId;
-	int pos;
 
-		if(list != NULL && len > 0 && listType != NULL && lenType > 0 && listStatus != NULL && lenStatus > 0)
+		if(list != NULL && len > 0)
 		{
 			report = -2;
 
-			reportId = printPassenger(list, len, listType, lenType, listStatus, lenStatus);
+			//reportId = printPassenger(list, len, listType, lenType, listStatus, lenStatus);
 			reportValidateId  = getNumberTypeInt(&id, "Ingrese el ID: ", "Error. Solo se pueden ingresar numeros\n", 0, 2001, 3);
 
-				if(reportValidateId == 0 && reportId != -1 && reportId != -2)
+				if(reportValidateId == 0)
 				{
-					pos = findPassengerById(list, len, id);
-					report = pos;
+					report = findPassengerById(list, len, id);
 				}
 
 		}
@@ -349,129 +430,7 @@ int requestid(Passenger* list, int len, eTypePassenger* listType, int lenType, e
 	return report;
 }
 
-/**
- * @brief Modify one of the values ​​of Passenger that the user wants
- *
- * @param list * Pointer to array of passenger
- * @param position int
- * @param listType* Pointer to array of passenger
- * @param lenType int
- * @param eStatusFligh* Pointer to array of passenger
- * @param lenStatus int
- * @param option int
- * @return report (-1) [If any of the pointers arrived in NULL] - report (1) [If the modified data could not be saved] - report (0) if OK
- */
-int modifyPassengerData(Passenger* list, int position, eTypePassenger* listType, int lenType, eStatusFlight* listStatus, int lenStatus, int option)
-{
-	int report = -1;
 
-	int reportName;
-	int reportLastName;
-	int reportPrice;
-	int reportCode;
-	int reportType;
-	int reportStatus;
-
-	Passenger aux;
-
-		if(list != NULL && position >= 0 && listType != NULL && lenType > 0 && listStatus != NULL && lenStatus > 0  && option > 0)
-		{
-			report = 1;
-
-				switch(option)
-				{
-					case 1:
-
-						strcpy(aux.name, list[position].name);
-							reportName = getNameOrLastName(list[position].name, LIMIT_NAME, "Nombre del pasajero: ", "Error. Introdusca bien el nombre\n", 3);
-
-								if(reportName != 0)
-								{
-									report = 0;
-									strcpy(list[position].name, aux.name);
-								}
-
-					break;
-
-					case 2:
-						strcpy(aux.lastName, list[position].lastName);
-						reportLastName = getNameOrLastName(list[position].lastName, LIMIT_LASTNAME, "Apellido del pasajero: ", "Error. Introdusca bien el apellido\n", 3);
-
-							if(reportLastName != 0)
-							{	report = 0;
-								strcpy(list[position].lastName, aux.lastName);
-							}
-					break;
-
-					case 3:
-						aux.price = list[position].price;
-						reportPrice = getNumberTypeFloat(&list[position].price, "Ingrese precio: ", "Error. Introdusca bien el precio\n", 1, 1000000, 3);
-
-							if(reportPrice != 0)
-							{
-								report = 0;
-								list[position].price = aux.price;
-							}
-					break;
-
-					case 4:
-						strcpy(aux.flycode, list[position].flycode);
-								reportCode = getNumberAlphanumeric(list[position].flycode, LIMIT_CODE, "Ingrese codigo de vuelo: ", "Error. Solo se permiten letras y numeros\n", 3);
-									if(reportCode != 0)
-									{
-										report = 0;
-										strcpy(list[position].flycode, aux.flycode);
-									}
-					break;
-
-					case 5:
-						aux.typePassenger = list[position].typePassenger;
-
-							printTypePassenger(listType, lenType);
-							reportType = getNumberTypeInt(&list[position].typePassenger, "\nIngrese el tipo de pasajero: ", "Error. Ingrese bien el tipo de pasajero\n", 999, 1100, 3);
-								if(reportType != 0)
-								{
-									report = 0;
-									list[position].typePassenger = aux.typePassenger;
-								}
-					break;
-
-					case 6:
-						aux.statusFlight = list[position].statusFlight;
-
-									printStatusflight(listStatus, lenStatus);
-									reportStatus = getNumberTypeInt(&list[position].statusFlight, "\nIngrese el estado del vuelo: ", "Error. Ingrese bien el estado del vuelo\n", 2999, 3101, 3);
-										if(reportStatus != 0)
-										{
-											report = 0;
-											list[position].statusFlight = aux.statusFlight;
-										}
-					break;
-				}
-		}
-
-	return report;
-}
-
-/**
- * @brief they pass the list of passengers, the position and return the id
- *
- * @param list	* Pointer to array of passenger
- * @param position int
- * @return report (-1) [If any of the pointers arrived in NULL] - report (return the position) if OK
- */
-int returnId(Passenger* list, int position)
-{
-	int report = -1;
-
-		if(list != NULL && position >= 0)
-		{
-			report = list[position].id;
-
-		}
-
-	return report;
-}
 
 /** \brief Remove a Passenger by Id (put isEmpty Flag in 1)
 *
@@ -485,13 +444,20 @@ find a passenger] - (0) if Ok
 int removePassenger(Passenger* list, int len, int id)
 {
 	int report = -1;
+	int i;
 
-
-				report = 0;
-
-				list[len].isEmpty = 1;
-
-
+		if(list != NULL && len > 0 && id > 0)
+		{
+			for(i=0;i<len;i++)
+			{
+				if( list[i].id == id )
+				{
+					report = 0;
+					list[i].isEmpty = 1;
+					break;
+				}
+			}
+		}
 
 	return report;
 }
@@ -506,24 +472,28 @@ int removePassenger(Passenger* list, int len, int id)
  * @param position int position same
  * @return	Return passenger index position or (-1) if [Invalid length or NULL pointer]- if (1) [I did not find a relationship] - if (0) OK
  */
-int searchTypePassenger(Passenger* list, int i, eTypePassenger* listType, int lenType, int* position)
+int searchTypePassenger(int typePassenger, char* type)
 {
 	int report = -1;
-	int j;
 
-		if(list != NULL && i >= 0 && listType != NULL && lenType > 0 && position >= 0)
+		if(typePassenger > 0 && type != NULL)
 		{
-			report = 1;
+			report = 0;
 
-					for(j=0;j<lenType;j++)
-					{
-						if(list[i].typePassenger == listType[j].idTypePassenger)
-						{
-							report = 0;
-							(*position) = j;
-							break;
-						}
-					}
+				switch(typePassenger)
+				{
+					case 1:
+						strcpy(type, "Ninio");
+					break;
+
+					case 2:
+						strcpy(type, "Adulto");
+					break;
+
+					case 3:
+						strcpy(type, "Anciano");
+					break;
+				}
 
 		}
 
@@ -531,33 +501,30 @@ int searchTypePassenger(Passenger* list, int i, eTypePassenger* listType, int le
 }
 
 /**
- * @brief search and compare if the parameters are equal
- *
- * @param list Passenger* Pointer to array of passenger
- * @param i int position
- * @param listType eStatusflight* Pointer to array of passenger
- * @param lentStatus int Array length
- * @param position int position same
- * @return	Return passenger index position or (-1) if [Invalid length or NULL pointer]- if (1) [I did not find a relationship] - if (0) OK
+ * @brief happens to the guy who has the passenger
+
+ * @param statusFlight int
+ * @param status char*
+ * @return	Return passenger index position or (-1) if [Invalid length or NULL pointer]- if (0) OK
  */
-int searchStatusFlight(Passenger* list, int i, eStatusFlight* listStatus, int lenTStatus, int* position)
+int searchStatusFlight(int statusFlight, char* status)
 {
 	int report = -1;
-	int j;
 
-		if(list != NULL && i >= 0 && listStatus != NULL && lenTStatus > 0 && position >= 0)
+		if(statusFlight > 0 && status != NULL)
 		{
-			report = 1;
+			report = 0;
 
-					for(j=0;j<lenTStatus;j++)
-					{
-						if(list[i].statusFlight == listStatus[j].idStatusFlight)
-						{
-							report = 0;
-							(*position) = j;
-							break;
-						}
-					}
+				switch(statusFlight)
+				{
+					case 1:
+						strcpy(status, "Activo");
+					break;
+
+					case 2:
+						strcpy(status, "Inactivo");
+					break;
+				}
 
 		}
 
@@ -569,21 +536,17 @@ int searchStatusFlight(Passenger* list, int i, eStatusFlight* listStatus, int le
  *
  * @param list	Passenger* Pointer to array of passenger
  * @param len	int Array length
- * @param listType	eTypePassenger* Pointer to array of passenger
- * @param lenType	int Array length
- * @param listStatus eStatusFlight* Pointer to array of passenger
- * @param lenStatus	int Array length
  * @return	Return passenger index position or (-1) if [Invalid length or NULL pointer] - if (0) OK
  */
-int printPassenger(Passenger* list, int len, eTypePassenger* listType, int lenType, eStatusFlight* listStatus, int lenStatus)
+int printPassenger(Passenger* list, int len)
 {
 	int report = -1;
 	int i;
 
-	int posType;
-	int posStatus;
+	char type[26];
+	char status[26];
 
-		if(list != NULL && len > 0 && listType != NULL && lenType > 0 && listStatus != NULL && lenStatus > 0)
+		if(list != NULL && len > 0)
 		{
 			report = 0;
 
@@ -592,9 +555,9 @@ int printPassenger(Passenger* list, int len, eTypePassenger* listType, int lenTy
 					{
 						if(list[i].isEmpty == 0)
 						{
-							searchTypePassenger(list, i, listType, lenType, &posType);
-							searchStatusFlight(list, i, listStatus, lenStatus, &posStatus);
-							printf("[%d]    %s    %s     %.2f    %s       %s   %s\n", list[i].id, list[i].name, list[i].lastName, list[i].price, list[i].flycode, listType[posType].description, listStatus[posStatus].description);
+							searchTypePassenger(list[i].typePassenger, type);
+							searchStatusFlight(list[i].statusFlight, status);
+							printf("[%d]    %s    %s     %.2f    %s       %s   %s\n", list[i].id, list[i].name, list[i].lastName, list[i].price, list[i].flycode, type, status);
 
 						}
 					}
@@ -634,154 +597,35 @@ int sortPassengers(Passenger* list, int len, int order)
 					{
 						outcome = strcmp(list[i].lastName, list[i+1].lastName);
 
-							if(order == 0 && list[i].isEmpty == 0)
+							if(list[i].isEmpty == 0 && ((order == 0 && outcome > 0) || (order == 1 && outcome < 0)))
 							{
 
-
-								if(outcome > 0)
-								{
-									swap = 1;
-									aux = list[i];
-									list[i] = list[i+1];
-									list[i+1] = aux;
-								}
-								else
-								{
-									if(outcome == 0 && list[i].typePassenger > list[i+1].typePassenger)
-									{
-										swap = 1;
-										aux = list[i];
-										list[i] = list[i+1];
-										list[i+1] = aux;
-									}
-								}
-
-							}
-							else
-							{
-								if(order == 1 && list[i].isEmpty == 0)
-								{
-
-
-									if(outcome < 0)
-									{
-										swap = 1;
-										aux = list[i];
-										list[i] = list[i+1];
-										list[i+1] = aux;
-									}
-									else
-									{
-										if(outcome == 0 && list[i].typePassenger < list[i+1].typePassenger)
-										{
-											swap = 1;
-											aux = list[i];
-											list[i] = list[i+1];
-											list[i+1] = aux;
-										}
-									}
-
-
-								}
-							}
-
-					}
-
-				}while(swap);
-
-
-		}
-
-	return report;
-}
-
-/** \brief Sort the elements in the array of passengers, the argument order
-indicate UP or DOWN order
-*
-* \param list Passenger*
-* \param len int
-* \param order int [1] indicate UP - [0] indicate DOWN
-* */
-int sortPassengersByCode(Passenger* list, int len, int order)
-{
-	Passenger aux;
-
-	int report = -1;
-	int i;
-	int swap;
-	int newLimit;
-	int outcome;
-
-		if(list != NULL && len > 0 && order >= 0)
-		{
-			report = 0;
-			newLimit = len - 1;
-
-				do{
-					swap = 0;
-
-					for(i=0;i<newLimit;i++)
-					{
-						if(order == 0 && list[i].isEmpty == 0)
-						{
-							outcome = strcmp(list[i].flycode, list[i+1].flycode);
-
-							if(outcome > 0)
-							{
 								swap = 1;
-
 								aux = list[i];
 								list[i] = list[i+1];
 								list[i+1] = aux;
+
 							}
 							else
 							{
-								if(outcome == 0 && list[i].statusFlight > list[i+1].statusFlight)
+								if(list[i].isEmpty == 0 && outcome == 0 && ((order == 0 && list[i].typePassenger > list[i+1].typePassenger) || (order == 1 && list[i].typePassenger < list[i+1].typePassenger)) )
 								{
 									swap = 1;
-
 									aux = list[i];
 									list[i] = list[i+1];
 									list[i+1] = aux;
 								}
 							}
-						}
-						else
-						{
-							if(order == 1 && list[i].isEmpty == 0)
-							{
-								outcome = strcmp(list[i].flycode, list[i+1].flycode);
 
-								if(outcome < 0)
-								{
-									swap = 1;
-
-									aux = list[i];
-									list[i] = list[i+1];
-									list[i+1] = aux;
-								}
-								else
-								{
-									if(outcome == 0 && list[i].statusFlight < list[i+1].statusFlight)
-									{
-										swap = 1;
-
-										aux = list[i];
-										list[i] = list[i+1];
-										list[i+1] = aux;
-									}
-								}
-							}
-						}
 					}
 
 				}while(swap);
+
 
 		}
 
 	return report;
 }
-
 
 /**
  * @brief get the total and the average of the prices
@@ -852,7 +696,123 @@ int getHowManyExceedAverage(Passenger* list, int len, float average, int* counte
 	return report;
 }
 
+int passenger_calculateTotalAverage(Passenger* list, int len)
+{
+	int report = -1;
 
+	float total;
+	float average;
+	int counter;
+
+		if(list != NULL && len > 0 )
+		{
+			getTotalAverage(list, len, &total, &average);
+			getHowManyExceedAverage(list, len, average, &counter);
+
+			printf("El precio total es: %.3f\n", total);
+			printf("El promedio de los precios es de: %.2f\n", average);
+			printf("La cantidad de personas que superan el promedio son: %d\n", counter);
+		}
+
+	return report;
+}
+
+/** \brief Sort the elements in the array of passengers, the argument order
+indicate UP or DOWN order
+*
+* \param list Passenger*
+* \param len int
+* \param order int [1] indicate UP - [0] indicate DOWN
+* */
+int sortPassengersByCode(Passenger* list, int len, int order)
+{
+	Passenger aux;
+
+	int report = -1;
+	int i;
+	int swap;
+	int newLimit;
+	int outcome;
+
+		if(list != NULL && len > 0 && order >= 0)
+		{
+			report = 0;
+			newLimit = len - 1;
+
+				do{
+					swap = 0;
+
+					for(i=0;i<newLimit;i++)
+					{
+						outcome = strcmp(list[i].flycode, list[i+1].flycode);
+
+						if(list[i].isEmpty == 0 && ((order == 0 && outcome > 0) || (order == 1 && outcome < 0)))
+						{
+								swap = 1;
+								aux = list[i];
+								list[i] = list[i+1];
+								list[i+1] = aux;
+						}
+						else
+						{
+							if(list[i].isEmpty == 0  && outcome == 0 && ((order == 0 && list[i].statusFlight > list[i+1].statusFlight) || ( order == 1 && list[i].statusFlight < list[i+1].statusFlight)) )
+							{
+								swap = 1;
+								aux = list[i];
+								list[i] = list[i+1];
+								list[i+1] = aux;
+							}
+						}
+					}
+
+				}while(swap);
+
+		}
+
+	return report;
+}
+
+/**
+ * @brief sub menu where it informs the passenger data
+ *
+ * @param list Passenger* pointer to array of passenger
+ * @param len int
+ * @return Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
+ */
+int passenger_report(Passenger* list, int len)
+{
+	int report = -1;
+
+	int option;
+
+		if(list != NULL && len > 0)
+		{
+			do{
+				printMenuThird();
+				saveOption(&option);
+
+					switch(option)
+					{
+						case 1:
+							sortPassengers(list, len, 0);
+							printPassenger(list, len);
+						break;
+
+						case 2:
+							passenger_calculateTotalAverage(list, len);
+						break;
+
+						case 3:
+							sortPassengersByCode(list, len, 0);
+							printPassenger(list, len);
+						break;
+					}
+
+				}while(option != 4);
+		}
+
+	return report;
+}
 
 /**
  * @brief forcefully loads passengers into the system
@@ -862,68 +822,32 @@ int getHowManyExceedAverage(Passenger* list, int len, float average, int* counte
  * @param counterId int pointer
  * @return	Return passenger index position or (-1) if [Invalid length or NULL pointer]- if (1) [if the data was not loaded correctly] - if (0) OK
  */
-int forcedLoad(Passenger* list, int len, int* counterId)
+int forcedLoad(Passenger* list, int len, char* name, char* lastName, float price, char* flycode, int typePassenger, int statusFlight, int* counterId)
 {
 	int report=-1;
-	int i;
-	int id;
-	int reportAdd;
+	int reportSearch;
 
-		if(list != NULL && len > 0)
+	int index;
+
+		if(list != NULL && name != NULL && lastName != NULL && price >= 0 && flycode != NULL && typePassenger > 0 && statusFlight > 0 && counterId != NULL)
 		{
 			report = 1;
 
-				//TypePassenger 1000 - 1010 - 1020	//StatusFlig 3000 -  3100
+			reportSearch = searchFree(list,  len, &index);
 
-				strcpy(list[0].name, "Gonzalo");
-				strcpy(list[0].lastName, "Lemiña");
-				list[0].price = 1334.22;
-				strcpy(list[0].flycode, "d2090");
-				list[0].typePassenger = 1000;
-				list[0].statusFlight = 3000;
-
-				strcpy(list[1].name, "Valeria");
-				strcpy(list[1].lastName, "Vazquez");
-				list[1].price = 5604.22;
-				strcpy(list[1].flycode, "d9020");
-				list[1].typePassenger = 1020;
-				list[1].statusFlight = 3000;
-
-				strcpy(list[2].name, "Leonardo");
-				strcpy(list[2].lastName, "Gilardi");
-				list[2].price = 2500.11;
-				strcpy(list[2].flycode, "f1923");
-				list[2].typePassenger = 1020;
-				list[2].statusFlight = 3100;
-
-				strcpy(list[3].name, "Santino");
-				strcpy(list[3].lastName, "Gilardi");
-				list[3].price = 2500.11;
-				strcpy(list[3].flycode, "a1943");
-				list[3].typePassenger = 1000;
-				list[3].statusFlight = 3000;
-
-				strcpy(list[4].name, "Juan");
-				strcpy(list[4].lastName, "Gonzalez");
-				list[4].price = 7234.11;
-				strcpy(list[4].flycode, "p9841");
-				list[4].typePassenger = 1020;
-				list[4].statusFlight = 3100;
-
-				for(i=0;i<5;i++)
+				if(reportSearch == 0)
 				{
-					assignId(&counterId, &id);
-					list[i].id = id;
+					(*counterId)++;
+					list[index].id = (*counterId);
+					strcpy(list[index].name, name);
+					strcpy(list[index].lastName, lastName);
+					list[index].price = price;
+					strcpy(list[index].flycode, flycode);
+					list[index].typePassenger = typePassenger;
+					list[index].statusFlight = statusFlight;
 
-					reportAdd =	addPassenger(list, len, id, list[i].name, list[i].lastName, list[i].price, list[i].typePassenger, list[i].flycode, list[i].statusFlight);
-
+					modifyIsEmpty(list, index, 0);
 				}
-
-				if(reportAdd == 0)
-				{
-					report = 0;
-				}
-
 		}
 
 	return report;

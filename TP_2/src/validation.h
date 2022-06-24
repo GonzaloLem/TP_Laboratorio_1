@@ -18,7 +18,4 @@ int getNumberTypeInt(int* number, char* message, char* messageError, int min, in
 
 int assignId(int** counterId, int* id);
 
-int printTypefloat(float num, char* message);
-int printTypeInt(int num, char* message);
-
 #endif /* VALIDATION_H_ */
