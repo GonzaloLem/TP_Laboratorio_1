@@ -4,6 +4,6 @@
 void printMenuOptions();
 void printMenuModify();
 int requestOption(int min, int max);
-int menu_exit(int saveOne, int saveTwo, int exit, char* messageOne, char* errorOne, char* messageTwo, char* errorTwo);
+int menu_exit(int flagOne, int flagTwo);
 
 #endif /* MENU_H_ */

@@ -999,6 +999,3 @@ id,name,lastname,price,flycode,typePassenger,statusFlight
 998,Jaye,Gutierrez,25000.00,MM0987B,EconomyClass,En Horario
 999,Tamarra,Navarro,15000.00,MM0987B,EconomyClass,En Horario
 1000,Saleem,Torres,20000.00,MM0987B,EconomyClass,En Horario
-1001,Gonzalo,Leminia,123123.33,GL11BE,FirstClass,Activo
-1002,Valeria,Vazquez,1233.33,VV1,FirstClass,Activo
-1004,Paola,Vazquez,8424.33,PV55,FirstClass,Inactivo

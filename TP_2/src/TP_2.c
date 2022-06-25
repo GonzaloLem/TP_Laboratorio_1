@@ -14,19 +14,16 @@ int main(void) {
 
 	Passenger list[LIMIT];
 
+	int reportAdd;
+	int reportDelete;
+
 	int option;
 	int counterId = 0;
 
 	int flag;
+	int flagForced = 0;
 
 		initPassengers(list, LIMIT);
-
-/*		forcedLoad(list, LIMIT, "Gonzalo", "Leminia", 10000, "GL11", 2, 1, &counterId); //Pasajeros para cargar forzosamente
-		forcedLoad(list, LIMIT, "Martina", "Leminia", 13000, "ML22", 1, 1, &counterId);
-		forcedLoad(list, LIMIT, "Valeria", "Vazquez", 20000, "VV21", 3, 2, &counterId);
-		forcedLoad(list, LIMIT, "Leonardo", "Gilardi", 6000, "LG66", 2, 1, &counterId);
-		forcedLoad(list, LIMIT, "Jesica", "Gonzalez", 9000, "JGD2", 2, 2, &counterId);
-		forcedLoad(list, LIMIT, "Graciela", "Dalto", 16000, "GL11", 3, 2, &counterId);*/
 
 		do{
 			flag = searchHousingLoaded(list, LIMIT);
@@ -37,7 +34,16 @@ int main(void) {
 				switch(option)
 				{
 					case 1:
-						askForInformation(list, LIMIT, &counterId);
+						reportAdd = askForInformation(list, LIMIT, &counterId);
+
+							if(reportAdd == 0)
+							{
+								printf("Pasajero cargado correctamente\n");
+							}
+							else
+							{
+								printf("Error. El pasajero no fue cargado\n");
+							}
 					break;
 
 					case 2:
@@ -54,7 +60,15 @@ int main(void) {
 					case 3:
 						if(flag == 0)
 						{
-							passenger_removePassenger(list, LIMIT);
+							reportDelete = passenger_removePassenger(list, LIMIT);
+								if(reportDelete == 0)
+								{
+									printf("Pasajero eliminado\n");
+								}
+								else
+								{
+									printf("No se encontro el pasajero\n");
+								}
 						}
 						else
 						{
@@ -73,9 +87,28 @@ int main(void) {
 						}
 					break;
 
+					case 5:
+						if(flagForced == 0)
+						{
+							forcedLoad(list, LIMIT, "Gonzalo", "Leminia", 20000, "GL11", 2, 1, &counterId); //Pasajeros para cargar forzosamente
+							forcedLoad(list, LIMIT, "Martina", "Leminia", 30000, "ML22", 1, 1, &counterId);
+							forcedLoad(list, LIMIT, "Valeria", "Vazquez", 18000, "VV21", 3, 2, &counterId);
+							forcedLoad(list, LIMIT, "Leonardo", "Gilardi", 32000, "LG66", 2, 1, &counterId);
+							forcedLoad(list, LIMIT, "Jesica", "Gonzalez", 45000, "JGD2", 2, 2, &counterId);
+							//forcedLoad(list, LIMIT, "Graciela", "Dalto", 16000, "GL11", 3, 2, &counterId);
+
+							flagForced = 1;
+						}
+						else
+						{
+							printf("Los datos ya fueron cargados\n");
+						}
+
+					break;
+
 				}
 
-		}while(option != 5);
+		}while(option != 6);
 
 	return EXIT_SUCCESS;
 }

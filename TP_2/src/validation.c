@@ -183,6 +183,10 @@ int getNumberTypeFloat(float* number, char* message, char*messageError, float mi
 							*number = NumConverted;
 							break;
 						}
+						else
+						{
+							printf("%s", messageError);
+						}
 
 				}
 		}
@@ -303,6 +307,10 @@ int getNumberAlphanumeric(char* alphaNumeic, int len, char* message, char*messag
 							strcpy(alphaNumeic, buffer);
 							report = 0;
 							break;
+						}
+						else
+						{
+							printf("%s", messageError);
 						}
 				}
 

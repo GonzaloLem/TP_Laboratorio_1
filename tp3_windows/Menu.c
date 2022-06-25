@@ -4,6 +4,10 @@
 #include "Menu.h"
 #include "Validations.h"
 
+/**
+ * @brief menu options
+ *
+ */
 void printMenuOptions()
 {
 	printf("\n1. Cargar los datos de los pasajeros desde el archivo data.csv (modo texto).\n"
@@ -18,6 +22,10 @@ void printMenuOptions()
 			"10. Salir\n");
 }
 
+/**
+ * @brief  menu options
+ *
+ */
 void printMenuModify()
 {
 	printf("\n1.Modificar Nombre\n"
@@ -29,14 +37,23 @@ void printMenuModify()
 			"7.Regresar\n");
 }
 
+/**
+ * @brief  asks you to enter an option and validates that it is a valid one
+ *
+ * @param min int
+ * @param max int
+ * @return return (-1) [if you do not enter what is requested] - return (option) if ok
+ */
 int requestOption(int min, int max)
 {
 	int report = -1;
-	int option;
+	int reportOption;
 
-		getNumberTypeInt(&option, "-Opcion: ", "Error, ingrese lo que se le pide", 1, 11,  1);
+	int option = 0;
 
-			if(option >= min && option <= max)
+	reportOption = getNumberTypeInt(&option, "-Opcion: ", "Error, ingrese lo que se le pide", 1, 11,  1);
+
+			if(reportOption == 0 && option >= min && option <= max)
 			{
 				report = option;
 			}
@@ -44,44 +61,37 @@ int requestOption(int min, int max)
 	return report;
 }
 
-int menu_exit(int saveOne, int saveTwo, int exit, char* messageOne, char* errorOne, char* messageTwo, char* errorTwo)
+/**
+ * @brief gives you the option to stay or leave the application
+ *
+ * @param flagOne int
+ * @param flagTwo int
+ * @return return (0) [if you do not enter what is requested or do not want to exit] - return (10) [if you want to go out]
+ */
+int menu_exit(int flagOne, int flagTwo)
 {
-	int report = 11;
+	int report ;
+	int reportOption;
 
-		if(saveOne >= 0 && saveTwo >= 0)
+	int opcion;
+
+		if(flagOne == 1 && flagTwo == 1)
 		{
+			report = 0;
 
-			if(saveOne == 1 || saveTwo == 1)
-			{
-				report = exit;
+			printf("\nLos datos no se guardaron en ningun archivo.\n");
 
-				if(saveOne == 1)
+			reportOption = getNumberTypeInt(&opcion, "¿Esta seguro que desea salir?\n1)Regresar\n2)Salir\n-Opcion: ", "Error. Ingrese una opcion valida\n", 1, 2,  2);
+
+				if(reportOption == 0 && opcion == 2)
 				{
-					printf("%s\n", messageOne);
+					report = 10;
 				}
-				else
-				{
-					printf("%s\n", errorOne);
-				}
-
-				if(saveTwo == 1)
-				{
-					printf("%s\n", messageTwo);
-				}
-				else
-				{
-					printf("%s\n", errorTwo);
-				}
-
-			}
-			else
-			{
-				printf("Guarde los datos en alguno de los archivos\n");
-			}
-
 
 		}
 
 	return report;
 }
+
+
 

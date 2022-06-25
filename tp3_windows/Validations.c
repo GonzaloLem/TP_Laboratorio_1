@@ -75,7 +75,7 @@ int validateNumberInt(char* buffer, int lenght)
 
 			for(i=0;i<lenght;i++)
 			{
-				if(buffer[i] < 48 || buffer[i] > 57)
+				if( *(buffer+i) < 48 || *(buffer+i) > 57)
 				{
 					report = 1;
 					break;
@@ -158,7 +158,7 @@ int validateOnlyLetters(char* chains, int len)
 			report = 0;
 			for(i=0;i<len;i++)
 			{
-				if((chains[i] < 65 || chains[i] > 90) && (chains[i] < 97 || chains[i] > 122))
+				if(( *(chains+i) < 65 || *(chains+i) > 90) && ( *(chains+i) < 97 || *(chains+i) > 122))
 				{
 					report = 1;
 					break;
@@ -240,7 +240,7 @@ int validateNumberFloat(char* buffer, int len)
 			report = 0;
 			for(i=0;i<len;i++)
 			{
-				if((buffer[i] != 46) && (buffer[i] < 48 || buffer[i] > 57))
+				if(( *(buffer+i) != 46) && ( *(buffer+i) < 48 || *(buffer+i) > 57))
 				{
 					report = 1;
 					break;
@@ -337,7 +337,7 @@ int validateOnlyLettersAndNumbers(char* chains, int len)
 			report = 0;
 			for(i=0;i<len;i++)
 			{
-				if(((chains[i] < 48 || chains[i] > 57) && (chains[i] < 65 || chains[i] > 90)) && ( chains[i] < 97 || chains[i] > 122))
+				if((( *(chains+i) < 48 || *(chains+i) > 57) && ( *(chains+i) < 65 || *(chains+i) > 90)) && ( *(chains+i) < 97 || *(chains+i) > 122))
 				{
 					report = 1;
 					break;

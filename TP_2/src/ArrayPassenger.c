@@ -175,13 +175,8 @@ int addPassenger(Passenger* list, int len, int id, char name[],char lastName[],f
  *
  * @param list Passenger* Pointer to array of passenger
  * @param len int Array length
- * @param listType etypePassenger* Pointer to array of passenger
- * @param lenType int Array length
- * @param listStatus eStatusflight* Pointer to array of passenger
- * @param lenStatus int Array lenght
  * @param counterId int pointer compute id
- * @return	int Return (-1) if Error [Invalid length or NULL pointer] - (1) if Error[The data was not loaded correctly] - (0) if Ok
- *
+ * @return	int Return (-1) if Error [Invalid length or NULL pointer] - (1) if Error[The data was not loaded correctly or could not add] - (0) if Ok
  *
  */
 int askForInformation(Passenger* list, int len, int* counterId)
@@ -204,8 +199,6 @@ int askForInformation(Passenger* list, int len, int* counterId)
 
 		if(list != NULL && len > 0)
 		{
-			report = 1;
-
 			reportName = getNameOrLastName(name, LIMIT_NAME, "Nombre del pasajero: ", "Error. Introdusca bien el nombre\n", 3);
 			reportLastName = getNameOrLastName(lastName, LIMIT_LASTNAME, "Apellido del pasajero: ", "Error. Introdusca bien el apellido\n", 3);
 			reportPrice = getNumberTypeFloat(&price, "Ingrese precio: ", "Error. Introdusca bien el precio\n", 1, 1000000, 3);
@@ -224,6 +217,7 @@ int askForInformation(Passenger* list, int len, int* counterId)
 
 						if(reportAddPassenger != 0)
 						{
+							report = 1;
 							(*counterId)--;
 						}
 				}
@@ -354,8 +348,7 @@ int passenger_removePassenger(Passenger* list, int len)
 
 				if(reportAskId == 0)
 				{
-					report = 0;
-					removePassenger(list, len, id);
+					report = removePassenger(list, len, id);
 				}
 		}
 
@@ -400,10 +393,6 @@ int findPassengerById(Passenger* list, int len, int id)
  *
  * @param list Passenger* Pointer to array of passenger
  * @param len int
- * @param listType eTypePassenger* Pointer to array of passenger
- * @param lenType int
- * @param listStatus eStatusFligh* Pointer to array of passenger
- * @param lenStatus int
  * @return Return passenger index position or (-1) if [Invalid length or NULL pointer received or passenger not found]- if (-2) [the id was not found] - if (return the position) OK
  *
  */
@@ -448,6 +437,7 @@ int removePassenger(Passenger* list, int len, int id)
 
 		if(list != NULL && len > 0 && id > 0)
 		{
+
 			for(i=0;i<len;i++)
 			{
 				if( list[i].id == id )
@@ -464,12 +454,8 @@ int removePassenger(Passenger* list, int len, int id)
 
 /**
  * @brief search and compare if the parameters are equal
- *
- * @param list Passenger* Pointer to array of passenger
- * @param i int position
- * @param listType etypePassenger* Pointer to array of passenger
- * @param lenType int Array length
- * @param position int position same
+ * @param typePassenger int
+ * @param type char*
  * @return	Return passenger index position or (-1) if [Invalid length or NULL pointer]- if (1) [I did not find a relationship] - if (0) OK
  */
 int searchTypePassenger(int typePassenger, char* type)
