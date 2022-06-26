@@ -1,19 +1,6 @@
-21:16:08 **** Rebuild of configuration Debug for project TP4_Windows ****
+Info: Nothing to build for TP4_Windows
+21:34:40 **** Incremental Build of configuration Debug for project TP4_Windows ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Validations.o" "..\\src\\Validations.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP4_Windows.o" "..\\src\\TP4_Windows.c" 
 gcc -o TP4_Windows.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Menu.o" "src\\Parser.o" "src\\Passenger.o" "src\\TP4_Windows.o" "src\\Validations.o" 
-Info: Nothing to build for TP4_Windows
-Info: Nothing to build for TP4_Windows
-Info: Nothing to build for TP4_Windows
-Info: Nothing to build for TP4_Windows
-Info: Nothing to build for TP4_Windows
-Info: Nothing to build for TP4_Windows
-Info: Nothing to build for TP4_Windows
-Info: Nothing to build for TP4_Windows
 Info: Nothing to build for TP4_Windows

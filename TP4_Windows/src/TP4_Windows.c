@@ -158,7 +158,7 @@ int main()
 						}
 						else
 						{
-							printf("No hay pasajeros para guardar\n");
+							printf("No hay pasajeros para guardarr\n");
 						}
 					break;
 
