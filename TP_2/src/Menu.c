@@ -82,7 +82,7 @@ int saveOption(int* option)
 						{
 							if(reportOption != 0)
 							{
-								printf("Ingrese numeros\n");
+								printf("Ingrese una opcion Valida\n");
 							}
 						}
 		}

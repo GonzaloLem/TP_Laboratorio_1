@@ -1,59 +1,19 @@
-14:11:20 **** Rebuild of configuration Debug for project TP_2 ****
+21:16:08 **** Rebuild of configuration Debug for project TP4_Windows ****
 Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Validations.o" "..\\src\\Validations.c" 
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
-gcc -o TP_2.exe "src\\ArrayPassenger.o" "src\\Menu.o" "src\\TP_2.o" "src\\validation.o" 
-Info: Nothing to build for TP_2
-Info: Nothing to build for TP_2
-Info: Nothing to build for TP_2
-Info: Nothing to build for TP_2
-Info: Nothing to build for TP_2
-14:16:24 **** Incremental Build of configuration Debug for project TP_2 ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validation.o" "..\\src\\validation.c" 
-gcc -o TP_2.exe "src\\ArrayPassenger.o" "src\\Menu.o" "src\\TP_2.o" "src\\validation.o" 
-14:19:53 **** Incremental Build of configuration Debug for project TP_2 ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Menu.o" "..\\src\\Menu.c" 
-gcc -o TP_2.exe "src\\ArrayPassenger.o" "src\\Menu.o" "src\\TP_2.o" "src\\validation.o" 
-Info: Nothing to build for TP_2
-Info: Nothing to build for TP_2
-14:34:07 **** Incremental Build of configuration Debug for project TP_2 ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
-gcc -o TP_2.exe "src\\ArrayPassenger.o" "src\\Menu.o" "src\\TP_2.o" "src\\validation.o" 
-Info: Nothing to build for TP_2
-14:41:59 **** Incremental Build of configuration Debug for project TP_2 ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
-gcc -o TP_2.exe "src\\ArrayPassenger.o" "src\\Menu.o" "src\\TP_2.o" "src\\validation.o" 
-Info: Nothing to build for TP_2
-Info: Nothing to build for TP_2
-14:42:53 **** Incremental Build of configuration Debug for project TP_2 ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
-gcc -o TP_2.exe "src\\ArrayPassenger.o" "src\\Menu.o" "src\\TP_2.o" "src\\validation.o" 
-Info: Nothing to build for TP_2
-Info: Nothing to build for TP_2
-Info: Nothing to build for TP_2
-14:47:40 **** Incremental Build of configuration Debug for project TP_2 ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
-..\src\TP_2.c: In function 'main':
-..\src\TP_2.c:66:17: warning: unknown escape sequence: '\m'
-          printf("Pasajero eliminado\m");
-                 ^~~~~~~~~~~~~~~~~~~~~~
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
-gcc -o TP_2.exe "src\\ArrayPassenger.o" "src\\Menu.o" "src\\TP_2.o" "src\\validation.o" 
-Info: Nothing to build for TP_2
-14:47:46 **** Incremental Build of configuration Debug for project TP_2 ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
-gcc -o TP_2.exe "src\\ArrayPassenger.o" "src\\Menu.o" "src\\TP_2.o" "src\\validation.o" 
-Info: Nothing to build for TP_2
-Info: Nothing to build for TP_2
-Info: Nothing to build for TP_2
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parser.o" "..\\src\\Parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP4_Windows.o" "..\\src\\TP4_Windows.c" 
+gcc -o TP4_Windows.exe "src\\Controller.o" "src\\LinkedList.o" "src\\Menu.o" "src\\Parser.o" "src\\Passenger.o" "src\\TP4_Windows.o" "src\\Validations.o" 
+Info: Nothing to build for TP4_Windows
+Info: Nothing to build for TP4_Windows
+Info: Nothing to build for TP4_Windows
+Info: Nothing to build for TP4_Windows
+Info: Nothing to build for TP4_Windows
+Info: Nothing to build for TP4_Windows
+Info: Nothing to build for TP4_Windows
+Info: Nothing to build for TP4_Windows
+Info: Nothing to build for TP4_Windows

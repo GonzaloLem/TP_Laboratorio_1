@@ -4,15 +4,32 @@
 #include "Validations.h"
 #include "LinkedList.h"
 #include "Parser.h"
+#include "Menu.h"
 #include "Passenger.h"
 #include "Controller.h"
-#include "Menu.h"
 
+/**
+ * @brief ask for dynamic memory
+ *
+ * @return Passenger pointer* Passenger
+ */
 Passenger* Passenger_new()
 {
 	return (Passenger*)malloc(sizeof(Passenger));
 }
 
+/**
+ * @brief  add a passenger with the parameters passed to it
+ *
+ * @param id int
+ * @param nombre char*
+ * @param apellido char*
+ * @param precio float
+ * @param tipoPasajero int
+ * @param codigoVuelo char*
+ * @param estadoDelVuelo char*
+ * @return return (NULL) [if any of the pointers arrived in null or the minimums are not respected] - return (Passenger*) if ok
+ */
 Passenger* Passenger_newParametros(int id,char* nombre, char* apellido,float precio,int tipoPasajero, char* codigoVuelo, char* estadoDelVuelo)
 {
 	Passenger* PassengerAux = NULL;
@@ -33,6 +50,18 @@ Passenger* Passenger_newParametros(int id,char* nombre, char* apellido,float pre
 	return PassengerAux;
 }
 
+/**
+ * @brief  Add a passenger with the parameters in txt
+ *
+ * @param id int
+ * @param nombre char*
+ * @param apellido char*
+ * @param precio float
+ * @param tipoPasajero int
+ * @param codigoVuelo char*
+ * @param estadoDelVuelo char*
+ * @return return (NULL) [if any of the pointers arrived in null] - return (Passenger*) if ok
+ */
 Passenger* Passenger_newParametrosTxt(char* idTxt,char* nombreTxt, char* apellidoTxt,char* precioTxt,char* tipoPasajeroTxt, char* codigoVueloTxt,  char* estadoDelVuelo)
 {
 	Passenger* PassengerAux = NULL;
@@ -53,6 +82,13 @@ Passenger* Passenger_newParametrosTxt(char* idTxt,char* nombreTxt, char* apellid
 	return PassengerAux;
 }
 
+/**
+ * @brief set an id
+ *
+ * @param this Passenger* pointer
+ * @param id int
+ * @return return (-1) [if the pointer arrived in NULL or the id is less than 0] - return (0) if Ok
+ */
 int Passenger_setId(Passenger* this,int id)
 {
 	int report = -1;
@@ -67,6 +103,13 @@ int Passenger_setId(Passenger* this,int id)
 	return report;
 }
 
+/**
+ * @brief set an id by passing it a txt id
+ *
+ * @param this Passenger* pointer
+ * @param id int
+ * @return return (-1) [if any of the pointers arrived in null]  - return (0) if Ok
+ */
 int Passenger_setIdTxt(Passenger* this, char* id)
 {
 	int report = -1;
@@ -86,6 +129,13 @@ int Passenger_setIdTxt(Passenger* this, char* id)
 	return report;
 }
 
+/**
+ * @brief get an id
+ *
+ * @param this Pointer Passenger
+ * @param id int*
+ * @return return (-1) [if any of the pointers arrived in null]  - return (0) if ok
+ */
 int Passenger_getId(Passenger* this,int* id)
 {
 	int report = -1;
@@ -100,6 +150,13 @@ int Passenger_getId(Passenger* this,int* id)
 	return report;
 }
 
+/**
+ * @brief get an id txt
+ *
+ * @param this Pointer Passenger
+ * @param id char*
+ * @return return (-1) [if any of the pointers arrived in null]  - return (0) if ok
+ */
 int Passenger_getIdTxt(Passenger* this, char* id)
 {
 	int report = -1;
@@ -113,6 +170,13 @@ int Passenger_getIdTxt(Passenger* this, char* id)
 	return report;
 }
 
+/**
+ * @brief set a name
+ *
+ * @param this pointer Passenger
+ * @param nombre char*
+ * @return return (-1) [if any of the pointers arrived in null]  - return (0) if ok
+ */
 int Passenger_setNombre(Passenger* this,char* nombre)
 {
 	int report = -1;
@@ -132,6 +196,13 @@ int Passenger_setNombre(Passenger* this,char* nombre)
 	return report;
 }
 
+/**
+ * @brief get a name
+ *
+ * @param this pointer Passenger
+ * @param nombre char*
+ * @return return (-1) [if any of the pointers arrived in null]  - return (0) if ok
+ */
 int Passenger_getNombre(Passenger* this,char* nombre)
 {
 	int report = -1;
@@ -145,6 +216,14 @@ int Passenger_getNombre(Passenger* this,char* nombre)
 	return report;
 }
 
+
+/**
+ * @brief set a LastName
+ *
+ * @param this pointer Passenger
+ * @param apellido char*
+ * @return return (-1) [if any of the pointers arrived in null]  - return (0) if ok
+ */
 int Passenger_setApellido(Passenger* this,char* apellido)
 {
 	int report = -1;
@@ -164,6 +243,13 @@ int Passenger_setApellido(Passenger* this,char* apellido)
 	return report;
 }
 
+/**
+ * @brief get a LastName
+ *
+ * @param this pointer Passenger
+ * @param apellido char*
+ * @return return (-1) [if any of the pointers arrived in null]  - return (0) if ok
+ */
 int Passenger_getApellido(Passenger* this,char* apellido)
 {
 	int report = -1;
@@ -177,6 +263,13 @@ int Passenger_getApellido(Passenger* this,char* apellido)
 	return report;
 }
 
+/**
+ * @brief set a Code
+ *
+ * @param this pointer Passenger
+ * @param codigoVuelo char*
+ * @return return (-1) [if any of the pointers arrived in null]  - return (0) if ok
+ */
 int Passenger_setCodigoVuelo(Passenger* this,char* codigoVuelo)
 {
 	int report = -1;
@@ -196,6 +289,13 @@ int Passenger_setCodigoVuelo(Passenger* this,char* codigoVuelo)
 	return report;
 }
 
+/**
+ * @brief get a Code
+ *
+ * @param this pointer Passenger
+ * @param codigoVuelo char*
+ * @return return (-1) [if any of the pointers arrived in null]  - return (0) if ok
+ */
 int Passenger_getCodigoVuelo(Passenger* this,char* codigoVuelo)
 {
 	int report = -1;
@@ -209,6 +309,13 @@ int Passenger_getCodigoVuelo(Passenger* this,char* codigoVuelo)
 	return report;
 }
 
+/**
+ * @brief set a statusFligh
+ *
+ * @param this pointer Passenger
+ * @param estadoDelVuelo char*
+ * @return return (-1) [if any of the pointers arrived in null]  - return (0) if ok
+ */
 int Passenger_setEstadoDelVuelo(Passenger* this,char* estadoDelVuelo)
 {
 	int report = -1;
@@ -216,12 +323,19 @@ int Passenger_setEstadoDelVuelo(Passenger* this,char* estadoDelVuelo)
 		if(this != NULL && estadoDelVuelo != NULL)
 		{
 			report  = 0;
-			strncpy(this->estadoDelVuelo, estadoDelVuelo, STATUS_FLIGHT);
+			strncpy(this->estadoDelVuelo , estadoDelVuelo, STATUS_FLIGHT);
 		}
 
 	return report;
 }
 
+/**
+ * @brief get a statusFligh
+ *
+ * @param this pointer Passenger
+ * @param estadoDelVuelo char*
+ * @return return (-1) [if any of the pointers arrived in null]  - return (0) if ok
+ */
 int Passenger_getEstadoDelVuelo(Passenger* this,char* estadoDelVuelo)
 {
 	int report = -1;
@@ -235,6 +349,13 @@ int Passenger_getEstadoDelVuelo(Passenger* this,char* estadoDelVuelo)
 	return report;
 }
 
+/**
+ * @brief set a typePassenger
+ *
+ * @param this pointer Passenger
+ * @param tipoPasajero int
+ * @return return (-1) [if the pointer is NULL or the type is less than 1]  - return (0) if ok
+ */
 int Passenger_setTipoPasajero(Passenger* this,int tipoPasajero)
 {
 	int report = -1;
@@ -249,6 +370,13 @@ int Passenger_setTipoPasajero(Passenger* this,int tipoPasajero)
 	return report;
 }
 
+/**
+ * @brief set a typePassenger txt
+ *
+ * @param this pointer Passenger
+ * @param tipoPasajero char*
+ * @return return (-1) [if any of the pointers arrived in null]  - return (0) if ok
+ */
 int Passenger_setTipoPasajeroTxt(Passenger* this,char* tipoPasajero)
 {
 	int report = -1;
@@ -263,6 +391,13 @@ int Passenger_setTipoPasajeroTxt(Passenger* this,char* tipoPasajero)
 	return report;
 }
 
+/**
+ * @brief get a typePassenger
+ *
+ * @param this pointer Passenger
+ * @param tipoPasajero int*
+ * @return return (-1) [if any of the pointers arrived in null]  - return (0) if ok
+ */
 int Passenger_getTipoPasajero(Passenger* this,int* tipoPasajero)
 {
 	int report = -1;
@@ -277,6 +412,13 @@ int Passenger_getTipoPasajero(Passenger* this,int* tipoPasajero)
 	return report;
 }
 
+/**
+ * @brief get a typePassenger txt
+ *
+ * @param this pointer Passenger
+ * @param tipoPasajero char*
+ * @return return (-1) [if any of the pointers arrived in null]  - return (0) if ok
+ */
 int Passenger_getTipoPasajeroTxt(Passenger* this,char* tipoPasajero)
 {
 	int report = -1;
@@ -291,20 +433,13 @@ int Passenger_getTipoPasajeroTxt(Passenger* this,char* tipoPasajero)
 	return report;
 }
 
-int Passenger_getNombreDelTipoPasajero(TypePassenger* this,char* nombreTipoPasajero)
-{
-	int report = -1;
-
-		if(this != NULL && nombreTipoPasajero != NULL)
-		{
-			report = 0;
-
-			strncpy(nombreTipoPasajero, this->tipoPasajero, LIMIT_TYPE_PASSENGER);
-		}
-
-	return report;
-}
-
+/**
+ * @brief set a price
+ *
+ * @param this pointer Passenger
+ * @param precio float
+ * @return return (-1) [if the pointer is NULL or the type is less than one or price is less than one]  - return (0) if ok
+ */
 int Passenger_setPrecio(Passenger* this,float precio)
 {
 	int report = -1;
@@ -318,6 +453,13 @@ int Passenger_setPrecio(Passenger* this,float precio)
 	return report;
 }
 
+/**
+ * @brief set a price txt
+ *
+ * @param this pointer Passenger
+ * @param precio float
+ * @return return (-1) [if any of the pointers arrived in null]  - return (0) if ok
+ */
 int Passenger_setPrecioTxt(Passenger* this,char* precio)
 {
 	int report = -1;
@@ -331,6 +473,13 @@ int Passenger_setPrecioTxt(Passenger* this,char* precio)
 	return report;
 }
 
+/**
+ * @brief get a price
+ *
+ * @param this pointer Passenger
+ * @param precio float*
+ * @return return (-1) [if any of the pointers arrived in null]  - return (0) if ok
+ */
 int Passenger_getPrecio(Passenger* this,float* precio)
 {
 	int report = -1;
@@ -344,6 +493,13 @@ int Passenger_getPrecio(Passenger* this,float* precio)
 	return report;
 }
 
+/**
+ * @brief get a price txt
+ *
+ * @param this pointer Passenger
+ * @param precio char*
+ * @return return (-1) [if any of the pointers arrived in null]  - return (0) if ok
+ */
 int Passenger_getPrecioTxt(Passenger* this,char* precio)
 {
 	int report = -1;
@@ -357,71 +513,211 @@ int Passenger_getPrecioTxt(Passenger* this,char* precio)
 	return report;
 }
 
-int typePassenger_getType(TypePassenger* this, char* type)
+/**
+ * @brief a type of passenger is passed and it returns the number of the type
+ *
+ * @param typePassenger char*
+ * @param type int*
+ * @return return (-1) [if any of the pointers arrived in null]  - return (0) if ok
+ */
+int passenger_getTypeTxt(char* typePassenger, int* type)
 {
 	int report = -1;
 
-		if(this != NULL && type != NULL)
+	int compareFirtsClass;
+	int compareExecutive;
+	int compareEconomyClass;
+
+		if(typePassenger != NULL && type != NULL)
 		{
 			report = 0;
-			strncpy(type, this->tipoPasajero, LIMIT_TYPE_PASSENGER);
+
+			compareFirtsClass = strcmp(typePassenger, "FirstClass");
+			compareExecutive = strcmp(typePassenger, "Executive");
+			compareEconomyClass = strcmp(typePassenger, "EconomyClass");
+
+				if(compareFirtsClass == 0)
+				{
+					(*type) = 1;
+				}
+
+				if(compareExecutive == 0)
+				{
+					(*type) = 2;
+				}
+
+				if(compareEconomyClass == 0)
+				{
+					(*type) = 3;
+				}
+
 		}
 
 	return report;
 }
 
-int typePassenger_getId(TypePassenger* this,int* id)
+/**
+ * @brief a type of passenger is passed and it returns the number of the type
+ *
+ * @param typePassenger char*
+ * @param type char*
+ * @return return (-1) [if any of the pointers arrived in null]  - return (0) if ok
+ */
+int passenger_getType(int typePassenger, char* type)
 {
 	int report = -1;
 
-		if(this != NULL && id >= 0)
+		if(typePassenger > 0 && type != NULL)
 		{
 			report = 0;
 
-			*id = this->idTypePassenger;
+				switch(typePassenger)
+				{
+					case 1:
+						strcpy(type, "FirstClass");
+					break;
+
+					case 2:
+						strcpy(type, "Executive");
+					break;
+
+					case 3:
+						strcpy(type, "EconomyClass");
+					break;
+				}
+
 		}
 
 	return report;
 }
 
-int passenger_assignId(LinkedList* pArrayListPassenger)
+/**
+ * @brief a type of passenger is passed to it and it returns the number of the type in text
+ *
+ * @param typePassenger char*
+ * @param type char*
+ * @return return (-1) [if any of the pointers arrived in null]  - return (0) if ok
+ */
+int passenger_setType(char* type, char* typePassenger)
 {
-	Passenger* list;
-
 	int report = -1;
+
+	int compareFirtsClass;
+	int compareExecutive;
+	int compareEconomyClass;
+
+		if(type != NULL && typePassenger > 0)
+		{
+			report = 0;
+
+			compareFirtsClass = strcmp(type, "FirstClass");
+			compareExecutive = strcmp(type, "Executive");
+			compareEconomyClass = strcmp(type, "EconomyClass");
+
+				if(compareFirtsClass == 0)
+				{
+					strcpy(typePassenger, "1");
+				}
+
+				if(compareExecutive == 0)
+				{
+					strcpy(typePassenger, "2");
+				}
+
+				if(compareEconomyClass == 0)
+				{
+					strcpy(typePassenger, "3");
+				}
+
+		}
+
+	return report;
+}
+
+/**
+ * @brief Assigns an id to the created Passenger
+ *
+ * @param pArrayListPassenger LinkedList*
+ * @return Return (-1) if [Invalid length or NULL pointer] - if (0) OK
+ */
+int passenger_searchIdMax(LinkedList* pArrayListPassenger)
+{
+	Passenger* ePassenger;
+	int report = -1;
+
 	int i;
-	int len;
-	int idPassenger;
-	int id = 0;
+	int id;
+	int idMax = 0;
 
 		if(pArrayListPassenger != NULL)
 		{
-			len = ll_len(pArrayListPassenger);
-
-			if(len > 0)
+			for(i=0;i<ll_len(pArrayListPassenger);i++)
 			{
-				for(i=0;i<len;i++)
-				{
-					list = ll_get(pArrayListPassenger, i);
+				ePassenger = ll_get(pArrayListPassenger, i);
+				Passenger_getId(ePassenger, &id);
 
-					Passenger_getId(list, &idPassenger);
-
-					if(idPassenger > id)
+					if(id >= idMax)
 					{
-						id = idPassenger;
+						idMax = id;
 					}
-				}
 			}
-			report = id;
+
+			report = idMax;
+			//printf("ID %d\n", id);
+
 		}
 
 	return report;
 }
 
-Passenger* addPassenger(LinkedList* pArrayListPassenger)
+/**
+ * @brief reassign the id's in the list
+ *
+ * @param pArrayListPassenger LinkedList*
+ * @param idMax int
+ * @return return (-1) [if the pointer arrived in null or the id is less than one] return (0) if ok
+ */
+int passenger_reasingId(LinkedList* pArrayListPassenger, int idMax)
 {
-	Passenger* list = NULL;
-	TypePassenger type[TAM_TYPE] = { {20001, "FirstClass"}, {20010, "Executive"}, {20020, "EconomyClass"} };
+	Passenger* ePassenger;
+
+	int report = -1;
+
+	int i;
+	int id;
+
+		if(pArrayListPassenger != NULL && idMax > 0)
+		{
+			report = 0;
+
+			for(i=0;i<ll_len(pArrayListPassenger);i++)
+			{
+				ePassenger = ll_get(pArrayListPassenger, i);
+
+				Passenger_getId(ePassenger, &id);
+
+				idMax++;
+				id = idMax;
+
+				Passenger_setId(ePassenger, id);
+				ll_set(pArrayListPassenger, i, ePassenger);
+
+			}
+
+		}
+
+	return report;
+}
+
+/**
+ * @brief request the data and add a passenger
+ *
+ * @return return (NULL) [if you do not enter what is requested] - return (Passenger*) if ok
+ */
+Passenger* addPassenger()
+{
+	Passenger* ePassenger = NULL;
+
 	Passenger* pPassenger;
 	Passenger aux;
 
@@ -432,19 +728,10 @@ Passenger* addPassenger(LinkedList* pArrayListPassenger)
 	int reportCode;
 	int reportStatus;
 
-	int optionType;
-
-	int idd;
-
-		if(pArrayListPassenger != NULL)
-		{
-
 			reportName = getNameOrLastName(aux.nombre, NAME_LASTNAME,"Nombre del pasajero: ", "Error. Ingrese un nombre valido", 2);
 			reportLastName = getNameOrLastName(aux.apellido, NAME_LASTNAME,"Apellido del pasajero: ", "Error. Ingrese un apellido valido", 2);
 			reportPrice = getNumberTypeFloat(&aux.precio, "Precio del vuelo: ", "Error. Ingrese un precio valido", 1, 1000000, 2);
-			printTypePassenger(type, TAM_TYPE);
-			reportType = getNumberTypeInt(&optionType, "Ingres el tipo de pasajero: ", "Error. ingrese una opcion valida", 1, 3, 2);
-			assignIdTypePassenger(type, TAM_TYPE, optionType, &aux.tipoPasajero);
+			reportType = getNumberTypeInt(&aux.tipoPasajero, "Ingrese el tipo de pasajero\n1)FirstClass\n2)Executive\n3)EconomyClass\n-Opcion: ", "Error. ingrese una opcion valida", 1, 3, 2);
 			reportCode = getNumberAlphanumeric(aux.codigoVuelo, FLYCODE, "Codigo del Vuelo: ","Error. Ingrese un codigo valido", 2);
 			reportStatus = getStatusFlight(aux.estadoDelVuelo, STATUS_FLIGHT, "Ingres el estado del Vuelo: ", "Error. Ingrese un estado valido", 2);
 
@@ -455,24 +742,26 @@ Passenger* addPassenger(LinkedList* pArrayListPassenger)
 
 							if(pPassenger != NULL)
 							{
-								idd = passenger_assignId(pArrayListPassenger) + 1;
-								//idd++;
-								aux.id = idd;
-								*pPassenger = aux;
-
-								list = pPassenger;
+								ePassenger = pPassenger;
 							}
 
 				}
-		}
 
-	return list;
+
+	return ePassenger;
 
 }
 
+/**
+ * @brief search for the id that is passed by parameter
+ *
+ * @param pArrayListPassenger LinkedList*
+ * @param id int
+ * @return return (-1) [Invalid length or NULL pointer] - return (index Passenger) if ok
+ */
 int passenger_searchId(LinkedList* pArrayListPassenger,int id)
 {
-	Passenger* list;
+	Passenger* ePassenger;
 
 	int report = -1;
 	int i;
@@ -481,17 +770,16 @@ int passenger_searchId(LinkedList* pArrayListPassenger,int id)
 
 		if(id > 0)
 		{
-			report = -2 ;
 
 			len = ll_len(pArrayListPassenger);
 
 				for(i=0;i<len;i++)
 				{
-					(list) = ll_get(pArrayListPassenger, i);
+					ePassenger = ll_get(pArrayListPassenger, i);
 
-					Passenger_getId( list, &idPassenger);
+					Passenger_getId( ePassenger, &idPassenger);
 
-						if(list != NULL && id == idPassenger)
+						if(ePassenger != NULL && id == idPassenger)
 						{
 							report = i;
 							break;
@@ -502,6 +790,12 @@ int passenger_searchId(LinkedList* pArrayListPassenger,int id)
 	return report;
 }
 
+/**
+ * @brief ask for an id and call the function (passenger_searchId) to look it up
+ *
+ * @param pArrayListPassenger
+ * @return return (-1) [Invalid length or NULL pointer] - return (-2) [if you do not enter what is requested] - return (index Passenger) if ok
+ */
 int passenger__askId(LinkedList* pArrayListPassenger)
 {
 	int report = -1;
@@ -512,7 +806,7 @@ int passenger__askId(LinkedList* pArrayListPassenger)
 		if(pArrayListPassenger != NULL)
 		{
 			report = -2;
-			controller_ListPassenger(pArrayListPassenger);
+			//controller_ListPassenger(pArrayListPassenger);
 			reportId = getNumberTypeInt(&id, "Ingrese el ID: ", "Error. ingrese un ID valido", 1, 10000, 2);
 
 				if(reportId == 0)
@@ -525,10 +819,14 @@ int passenger__askId(LinkedList* pArrayListPassenger)
 	return report;
 }
 
-Passenger* editPassenger(LinkedList* pArrayListPassenger, int index)
+/**
+ * @brief edit the passenger that was passed by parameter
+ *
+ * @param ePassenger  pointer Passenger*
+ * @return return (Passenger* ePassenger) if ok
+ */
+Passenger* editPassenger(Passenger* ePassenger)
 {
-	Passenger* list = NULL;
-	TypePassenger type[TAM_TYPE] = { {20001, "FirstClass"}, {20010, "Executive"}, {20020, "EconomyClass"} };
 	Passenger aux;
 
 	int reportName;
@@ -539,15 +837,9 @@ Passenger* editPassenger(LinkedList* pArrayListPassenger, int index)
 	int reportStatus;
 
 	int option;
-	int optionType;
 
-		if(pArrayListPassenger != NULL)
+		if(ePassenger != NULL)
 		{
-
-			if(index >= 0)
-			{
-
-				list =  ll_get(pArrayListPassenger, index);
 				do{
 					printMenuModify();
 					option = requestOption(1, 7);
@@ -559,7 +851,7 @@ Passenger* editPassenger(LinkedList* pArrayListPassenger, int index)
 
 									if(reportName == 0)
 									{
-										Passenger_setNombre( list, aux.nombre );
+										Passenger_setNombre( ePassenger, aux.nombre );
 									}
 							break;
 
@@ -568,7 +860,7 @@ Passenger* editPassenger(LinkedList* pArrayListPassenger, int index)
 
 									if(reportLastName == 0)
 									{
-										Passenger_setApellido( list, aux.apellido );
+										Passenger_setApellido( ePassenger, aux.apellido );
 									}
 							break;
 
@@ -577,18 +869,16 @@ Passenger* editPassenger(LinkedList* pArrayListPassenger, int index)
 
 									if(reportPrice == 0)
 									{
-										Passenger_setPrecio( list, aux.precio );
+										Passenger_setPrecio( ePassenger, aux.precio );
 									}
 							break;
 
 							case 4:
-								printTypePassenger(type, TAM_TYPE);
-								reportType = getNumberTypeInt(&optionType, "Ingres el tipo de pasajero: ", "Error. ingrese una opcion valida", 1, 3, 2);
-								assignIdTypePassenger(type, TAM_TYPE, optionType, &aux.tipoPasajero);
+								reportType = getNumberTypeInt(&aux.tipoPasajero, "Ingrese el tipo de pasajero\n1)FirstClass\n2)Executive\n3)EconomyClass\n-Opcion: ", "Error. ingrese una opcion valida", 1, 3, 2);
 
 									if(reportType == 0)
 									{
-										Passenger_setTipoPasajero( list, aux.tipoPasajero );
+										Passenger_setTipoPasajero( ePassenger, aux.tipoPasajero );
 									}
 							break;
 
@@ -597,7 +887,7 @@ Passenger* editPassenger(LinkedList* pArrayListPassenger, int index)
 
 									if(reportCode == 0)
 									{
-										Passenger_setCodigoVuelo( list, aux.codigoVuelo );
+										Passenger_setCodigoVuelo( ePassenger, aux.codigoVuelo );
 									}
 							break;
 
@@ -606,41 +896,29 @@ Passenger* editPassenger(LinkedList* pArrayListPassenger, int index)
 
 									if(reportStatus == 0)
 									{
-										Passenger_setEstadoDelVuelo( list, aux.estadoDelVuelo );
+										Passenger_setEstadoDelVuelo( ePassenger, aux.estadoDelVuelo );
 									}
 							break;
 						}
 
 				}while(option != 7);
-			}
+
 
 
 
 		}
-	return list;
+	return ePassenger;
 }
 
-int passenger_remove(LinkedList* pArrayListPassenger, int index)
+/**
+ * @brief print the passenger that was passed by parameter
+ *
+ * @param ePassenger Passenger* ePassenger
+ * @return return (-1) [if the pointer arrived in NULL] - return (0) if ok
+ */
+int passenger_printPassenger(Passenger* ePassenger)
 {
 	int report = -1;
-
-		if(pArrayListPassenger != NULL)
-		{
-			report = 0;
-			ll_remove(pArrayListPassenger ,index);
-		}
-
-	return report;
-}
-
-int passenger_printList(LinkedList* pArrayListPassenger)
-{
-	Passenger* list;
-	TypePassenger type[TAM_TYPE] = { {20001, "FirstClass"}, {20010, "Executive"}, {20020, "EconomyClass"} };
-
-	int report = -1;
-	int i;
-	int len;
 
 	int id;
 	char name[NAME_LASTNAME];
@@ -651,301 +929,74 @@ int passenger_printList(LinkedList* pArrayListPassenger)
 	char codigoDeVuelo[FLYCODE];
 	char estadoDelVuelo[STATUS_FLIGHT];
 
-		if(pArrayListPassenger != NULL)
+		if(ePassenger != NULL)
 		{
 			report = 0;
 
-				len = ll_len(pArrayListPassenger);
-				printf("ID   Nombre          Apellido          Precio                     Codigo                 Tipo Pasajero                         Estado del Vuelo\n");
-				for(i=0;i<len;i++)
-				{
-					(list) = ll_get(pArrayListPassenger, i);
+				Passenger_getId( ePassenger, &id);
+				Passenger_getNombre( ePassenger, name);
+				Passenger_getApellido( ePassenger, lastName);
+				Passenger_getPrecio( ePassenger, &price);
+				Passenger_getTipoPasajero( ePassenger, &passengerType);
+				passenger_getType(passengerType, passengerTypeTxt);
 
-						if( list != NULL)
-						{
-							Passenger_getId( list, &id);
-							Passenger_getNombre( list, name);
-							Passenger_getApellido( list, lastName);
-							Passenger_getPrecio( list, &price);
-							Passenger_getTipoPasajero( list, &passengerType);
-							searchIdType(type, TAM_TYPE, passengerType, passengerTypeTxt);
-							Passenger_getCodigoVuelo( list, codigoDeVuelo );
-							Passenger_getEstadoDelVuelo( list, estadoDelVuelo);
+				Passenger_getCodigoVuelo( ePassenger, codigoDeVuelo );
+				Passenger_getEstadoDelVuelo( ePassenger, estadoDelVuelo);
 
-							printf("[%d]  "
-									"%s         "
-									"%s           "
-									"%.2f                  "
-									"%s                          "
-									"%s                             "
-									"%s     \n",
-									id,
-									name,
-									lastName,
-									price,
-									codigoDeVuelo,
-									passengerTypeTxt,
-									estadoDelVuelo);
-						}
-				}
-		}
-	return report;
-}
-
-int passenger_sortPassenger(LinkedList* pArrayListPassenger)
-{
-	Passenger* listOne;
-	Passenger* listTwo;
-
-	int report = -1;
-	int i;
-	int swap;
-	int len;
-
-		if(pArrayListPassenger != NULL)
-		{
-			report = 0;
-
-			pFunc* sort;
-
-			sort = passenger_sort;
-
-			len = ll_len(pArrayListPassenger);
-
-				do{
-					swap = 0;
-					for(i=0;i<len;i++)
-					{
-						listOne = ll_get(pArrayListPassenger, i);
-						listTwo = ll_get(pArrayListPassenger, i+1);
-
-							if(listOne != NULL && listTwo != NULL)
-							{
-								swap = sort(listOne, listTwo);
-
-									if(swap == 1)
-									{
-										ll_sort(pArrayListPassenger, sort, 1);
-									}
-							}
-
-					}
-				}while(swap);
-		}
+				printf("[%d]  "
+						"%s         "
+						"%s           "
+						"%.2f                  "
+						"%s                          "
+						"%s                             "
+						"%s     \n",
+						id,
+						name,
+						lastName,
+						price,
+						codigoDeVuelo,
+						passengerTypeTxt,
+						estadoDelVuelo);
 
 
-	return report;
-}
-
-int searchIdType(TypePassenger* type, int len, int idPassenger, char* typeTxt)
-{
-	int report = -1;
-	int i;
-	int id;
-	char passengerType[LIMIT_TYPE_PASSENGER];
-
-		if(type != NULL && len > 0 && idPassenger > 0 && typeTxt != NULL)
-		{
-			report = -2;
-			for(i=0;i<len;i++)
-			{
-				typePassenger_getId( (type+i),&id);
-
-				if(idPassenger == id)
-				{
-					report = 0;
-					typePassenger_getType( (type+i), passengerType);
-					strcpy(typeTxt, passengerType);
-					break;
-				}
-			}
 		}
 
 	return report;
 }
 
-int printTypePassenger(TypePassenger* type, int len)
+/**
+ * @brief compare two lastnames
+ *
+ * @param elementOne void*
+ * @param elementTwo void*
+ * @return return (-2) [if any of the pointers arrived in NULL] - return (-1) [if the lastName two is not less]
+ * 																		  (2) [if lastName two is higher]
+ */
+int passenger_orderPassengerByLastName(void* elementOne, void* elementTwo)
 {
-	int report = -1;
-	int i;
-	char passengerType[LIMIT_TYPE_PASSENGER];
+	int report = -2;
 
-		if(type != NULL && len > 0)
+	char lastNameOne[60];
+	char lastNameTwo[60];
+
+	int compareLastName;
+
+		if(elementOne != NULL && elementTwo !=  NULL)
 		{
-			report = 0;
-				printf("\nTipos de pasajeros\n");
-				for(i=0;i<len;i++)
-				{
-					typePassenger_getType( (type+i), passengerType );
-					printf("%d)%s\n", i+1, passengerType );
-				}
-		}
 
-	return report;
-}
+			Passenger_getApellido(elementOne, lastNameOne);
+			Passenger_getApellido(elementTwo, lastNameTwo);
 
-int assignIdTypePassenger(TypePassenger* type, int len, int option, int* id)
-{
-	int report = -1;
-	int i;
+			compareLastName = strcmp(lastNameOne, lastNameTwo);
 
-		if(type != NULL && len > 0 && option > 0 && id != NULL)
-		{
-			report = 0;
-			option = option -1;
-				for(i=0;i<len;i++)
-				{
-					if(option == i)
-					{
-						*id = (*(type+i)).idTypePassenger;
-					}
-				}
-		}
-
-	return report;
-}
-
-int typePassenger_searchType(TypePassenger* type, int len, char* passengerType, int* idType)
-{
-	int report = -1;
-	int i;
-	char nameType[LIMIT_TYPE_PASSENGER];
-	int compare;
-	int id;
-
-		if( type != NULL && len > 0 && idType != NULL)
-		{
-			for(i=0;i<len;i++)
-			{
-				Passenger_getNombreDelTipoPasajero( (type+i), nameType);
-
-				compare = strcmp(passengerType, nameType);
-
-				if( compare == 0)
-				{
-					typePassenger_getId( (type+i), &id );
-					*idType = id;
-					break;
-				}
-			}
-		}
-
-	return report;
-}
-
-int passenger_sortName(Passenger* listOne, Passenger*listTwo)
-{
-	Passenger* aux;
-
-	int report = -1;
-	int comparison;
-
-		if(listOne != NULL && listTwo != NULL)
-		{
-			report = 0;
-			comparison = strcmp(listOne->nombre, listTwo->nombre);
-
-				if(comparison > 0)
+				report = -1;
+				if(compareLastName > 0 )
 				{
 					report = 1;
-
-					aux = listOne;
-					listOne = listTwo;
-					listTwo = aux;
-
-				}
-				else
-				{
-					if(comparison == 0)
-					{
-						comparison = strcmp(listOne->apellido, listTwo->apellido);
-
-						if(comparison > 0)
-						{
-							report = 1;
-
-							aux = listOne;
-							listOne = listTwo;
-							listTwo = aux;
-						}
-					}
 				}
 
 		}
 
 	return report;
 }
-
-int passenger_sort(void* listOne, void* listTwo)
-{
-	int report = -1;
-
-		if(listOne != NULL && listTwo != NULL)
-		{
-			report = passenger_sortName(listOne, listTwo);
-		}
-
-	return report;
-}
-
-int passenger_reasingId(LinkedList* pArrayListPassenger, int id, int option)
-{
-	Passenger* list;
-
-	int report = -1;
-	int i;
-	int j;
-	int len;
-	int idPassenger;
-
-		if(pArrayListPassenger != NULL && id >= 0 && option > 0)
-		{
-			len = ll_len(pArrayListPassenger);
-
-			if(option == 1)
-			{
-				for(i=0;i<len;i++)
-				{
-					list = ll_get(pArrayListPassenger, i);
-
-					Passenger_getId(list, &idPassenger);
-
-					if(id == idPassenger && list != NULL)
-					{
-						id++;
-						for(j=i;j<len;j++)
-						{
-
-							Passenger_setId(list, id);
-							ll_set(pArrayListPassenger, i, list);
-						}
-					}
-				}
-			}
-			else
-			{
-				if(option == 2)
-				{
-					for(i=0;i<len;i++)
-					{
-						list = ll_get(pArrayListPassenger, i);
-							if(list != NULL)
-							{
-								id++;
-
-								Passenger_setId(list, id);
-								ll_set(pArrayListPassenger, i, list);
-							}
-
-					}
-				}
-			}
-
-		}
-
-	return report;
-}
-
-
-
 

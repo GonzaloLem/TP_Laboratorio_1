@@ -15,6 +15,7 @@ int main(void) {
 	Passenger list[LIMIT];
 
 	int reportAdd;
+	int reportModify;
 	int reportDelete;
 
 	int option;
@@ -49,7 +50,11 @@ int main(void) {
 					case 2:
 						if(flag == 0)
 						{
-							modifiPassenger(list, LIMIT);
+							reportModify = modifiPassenger(list, LIMIT);
+								if(reportModify != 0)
+								{
+									printf("No se encontro el pasjero\n");
+								}
 						}
 						else
 						{

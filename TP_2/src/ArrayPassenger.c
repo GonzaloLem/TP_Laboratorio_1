@@ -375,7 +375,7 @@ int findPassengerById(Passenger* list, int len, int id)
 
 				for(i=0;i<len;i++)
 				{
-					if(list[i].id == id)
+					if(list[i].id == id && list[i].isEmpty == 0)
 					{
 						report = i;
 						break;
@@ -440,7 +440,7 @@ int removePassenger(Passenger* list, int len, int id)
 
 			for(i=0;i<len;i++)
 			{
-				if( list[i].id == id )
+				if( list[i].id == id && list[i].isEmpty == 0)
 				{
 					report = 0;
 					list[i].isEmpty = 1;
