@@ -31,9 +31,11 @@ int main()
     LinkedList* listaPasajerosAuxilear = ll_newLinkedList();
 
     int option = 0;
+    int id = 0;
 
     int reportLoad;
     int reportLoadBin;
+    int reportAdd;
 
     int flagLoad = 0;
 
@@ -57,6 +59,7 @@ int main()
 								if(reportLoad == 0)
 								{
 									flagLoad = 1;
+									id = passenger_searchIdMax(listaPasajeros);
 								}
 						}
 						else
@@ -72,6 +75,7 @@ int main()
 								if(reportLoadBin == 0)
 								{
 									flagLoad = 1;
+									id = passenger_searchIdMax(listaPasajeros);
 								}
 						}
 						else
@@ -81,7 +85,11 @@ int main()
 					break;
 
 					case 3:
-						controller_addPassenger(listaPasajeros);
+						reportAdd = controller_addPassenger(listaPasajeros);
+							if(reportAdd == 0)
+							{
+								passenger_addId(listaPasajeros, &id);
+							}
 					break;
 
 					case 4:

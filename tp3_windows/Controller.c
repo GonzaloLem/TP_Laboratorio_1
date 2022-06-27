@@ -111,8 +111,6 @@ int controller_addPassenger(LinkedList* pArrayListPassenger)
 
 	int report = -1;
 
-	int id;
-
 		if(pArrayListPassenger != NULL)
 		{
 			ePassenger = addPassenger();
@@ -120,8 +118,6 @@ int controller_addPassenger(LinkedList* pArrayListPassenger)
 				if(ePassenger != NULL)
 				{
 					report = 0;
-					id = passenger_searchIdMax(pArrayListPassenger)+1;
-					Passenger_setId(ePassenger, id);
 					ll_add(pArrayListPassenger, ePassenger);
 				}
 		}

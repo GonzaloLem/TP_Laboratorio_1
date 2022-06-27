@@ -635,6 +635,30 @@ int passenger_setType(char* type, char* typePassenger)
 }
 
 /**
+ * @brief add an id to the passenger
+ *
+ * @param pArrayListPassenger LinkedList*
+ * @param id int*
+ * @return return (-1) [if any of the pointers returned null] - return (0) if OK
+ */
+int passenger_addId(LinkedList* pArrayListPassenger, int* id)
+{
+	Passenger* ePassenger;
+	int report = -1;
+
+		if(pArrayListPassenger != NULL && id != NULL)
+		{
+			report = 0;
+			(*id)++;
+			ePassenger = ll_get(pArrayListPassenger, ll_len(pArrayListPassenger)-1);
+			Passenger_setId(ePassenger, *id);
+			ll_set(pArrayListPassenger, ll_len(pArrayListPassenger)-1, ePassenger);
+		}
+
+	return report;
+}
+
+/**
  * @brief Assigns an id to the created Passenger
  *
  * @param pArrayListPassenger LinkedList*

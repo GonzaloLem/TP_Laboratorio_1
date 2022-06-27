@@ -57,6 +57,7 @@ int passenger_getTypeTxt(char* typePassenger, int* type);
 int passenger_getType(int typePassenger, char* type);
 int passenger_setType(char* type, char* typePassenger);
 
+int passenger_addId(LinkedList* pArrayListPassenger, int* id);
 int passenger_searchIdMax(LinkedList* pArrayListPassenger);
 int passenger_reasingId(LinkedList* pArrayListPassenger, int idMax);
 
